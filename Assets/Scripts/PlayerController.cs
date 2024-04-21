@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         tPlayer = GameObject.FindWithTag("Player");
+        
     }
     void Update()
     {
