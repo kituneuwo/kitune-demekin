@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class BackGroundMover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField]
+    private float speed = 0.1f;
     void Update()
     {
-        
+        this.transform.position += new Vector3(speed, 0, 0);
     }
 }
