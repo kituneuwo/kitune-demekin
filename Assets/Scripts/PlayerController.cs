@@ -6,15 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1f;
-    [SerializeField]
-    private GameObject tPlayer;
-    void Start()
-    {
-        tPlayer = GameObject.FindWithTag("Player");
-        
-    }
     void Update()
     {
-        this.transform.position += new Vector3(0, 0, speed);
+        this.transform.position += new Vector3(speed, 0, 0);
     }
 }
