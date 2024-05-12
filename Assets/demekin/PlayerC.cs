@@ -12,11 +12,11 @@ public class PlayerC : MonoBehaviour
     private float MinY;
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) && transform.position.y < MaxY)
+        if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < MaxY)
         {
             transform.position += new Vector3(0, speed * Time.deltaTime, 0);
         }
-        if (Input.GetKey(KeyCode.S) && transform.position.y > MinY)
+        if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > MinY)
         {
             transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
         }
