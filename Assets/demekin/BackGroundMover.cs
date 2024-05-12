@@ -8,6 +8,6 @@ public class BackGroundMover : MonoBehaviour
     private float speed = 0.1f;
     void Update()
     {
-        this.transform.position += new Vector3(speed, 0, 0);
+        this.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
     }
 }
