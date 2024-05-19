@@ -10,11 +10,11 @@ public class HaikeiGenerate : MonoBehaviour
     private float gap;
     void Start()
     {
-        Instantiate(haikeiObject, new Vector3(-7.4f, 2, -5), Quaternion.identity);
+        Instantiate(haikeiObject, new Vector3(-2.4f, 2, -5), Quaternion.Euler(0, 180, 0));
         InvokeRepeating("GenerateHaikei", 0.0f, gap);
     }
     void GenerateHaikei()
     {
-        Instantiate(haikeiObject, new Vector3(-42.4f, 2, -5), Quaternion.identity);
+        Instantiate(haikeiObject, new Vector3(32.6f, 2, -5), Quaternion.Euler(0, 180, 0));
     }
 }

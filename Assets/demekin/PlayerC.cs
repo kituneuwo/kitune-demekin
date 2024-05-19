@@ -16,6 +16,8 @@ public class PlayerC : MonoBehaviour
     private float MinY;
     [SerializeField]
     private GameObject EnemyObject;
+    [SerializeField]
+    private GameObject BulletObject;
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < MaxY)
@@ -26,17 +28,21 @@ public class PlayerC : MonoBehaviour
         {
             transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
         }
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x > MinX)
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < MaxX)
         {
-            transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         }
-        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x < MaxX)
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > MinX)
         {
-            transform.position += new Vector3(speed * Time.deltaTime,0, 0);
+            transform.position += new Vector3(-speed * Time.deltaTime,0, 0);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(EnemyObject, new Vector3(-15,0,0), Quaternion.identity);
+            Instantiate(BulletObject, new Vector3(transform.position.x + 2.6f, transform.position.y + 0.075f, transform.position.z), Quaternion.Euler(0,0,-90));
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Instantiate(EnemyObject, new Vector3(transform.position.x + 15, transform.position.y, transform.position.z), Quaternion.Euler(0, 90, 0));
         }
     }
 }
