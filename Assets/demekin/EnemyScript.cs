@@ -25,6 +25,7 @@ public class EnemyScript : MonoBehaviour
     {
         col = this.gameObject.GetComponent<BoxCollider>();
         col.enabled = false;
+        Invoke("DestroyChara", DeathTime);
         for (int i = 0; i < Children.Length; i++)
         {
             Children[i].transform.DetachChildren();
@@ -37,7 +38,6 @@ public class EnemyScript : MonoBehaviour
             rb.useGravity = true;
             rb.AddForce(Random.insideUnitSphere * power, ForceMode.VelocityChange);
         }
-        Invoke("DestroyChara", DeathTime);
     }
     void DestroyChara()
     {

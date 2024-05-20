@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 5728859712250629022}
   - component: {fileID: 1469514961605705143}
   - component: {fileID: 1627423868630408725}
+  - component: {fileID: 3567265145199895182}
   m_Layer: 6
   m_Name: cuboid_6
   m_TagString: Untagged
@@ -475,6 +476,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3567265145199895182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592478311000946840}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 0.3125, z: 1.0000002}
+  m_Center: {x: 0, y: 0.1875, z: 0}
 --- !u!1 &3942551812487433182
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,10 +733,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fd6aa5de541746853a6993b908a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Children: []
-  DObject: []
-  power: 0
-  DeathTime: 0
+  Children:
+  - {fileID: 4216713073034529548}
+  - {fileID: 579128731015553711}
+  - {fileID: 6834982342097863335}
+  - {fileID: 1110427438419937382}
+  - {fileID: 7404785051652112687}
+  - {fileID: 827564464728072327}
+  - {fileID: 7522501732434881778}
+  - {fileID: 4183810041199498537}
+  DObject:
+  - {fileID: 8867400721221546733}
+  - {fileID: 3469012290195426901}
+  - {fileID: 3592478311000946840}
+  - {fileID: 2601030931937047942}
+  - {fileID: 4220538102930202350}
+  - {fileID: 5194208436363278118}
+  - {fileID: 6440978291185330499}
+  - {fileID: 3942551812487433182}
+  power: 9
+  DeathTime: 2
 --- !u!65 &9092893567873512184
 BoxCollider:
   m_ObjectHideFlags: 0
