@@ -126,11 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953ce919ba892b34c9b49532cc1a58b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
-  power: 10
-  torque: 500
+  speed: 50
+  power: 6
+  torque: 350
   DeathTime: 0.75
-  plus: 1.3
+  plus: 1.5
 --- !u!136 &-7627176369926297484
 CapsuleCollider:
   m_ObjectHideFlags: 0

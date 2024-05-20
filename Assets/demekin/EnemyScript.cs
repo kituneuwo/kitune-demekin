@@ -13,18 +13,17 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private float DeathTime;
     private Rigidbody rb;
-    private BoxCollider col;
+    [SerializeField]
+    private BoxCollider col1;
+    [SerializeField]
+    private BoxCollider col2;
     private BoxCollider Childcol;
+    [SerializeField]
     private int health;
-    void Start()
-    {
-        health = 10;
-        
-    }
     void BreakChara()
     {
-        col = this.gameObject.GetComponent<BoxCollider>();
-        col.enabled = false;
+        col1.enabled = false;
+        col2.enabled = false;
         Invoke("DestroyChara", DeathTime);
         for (int i = 0; i < Children.Length; i++)
         {

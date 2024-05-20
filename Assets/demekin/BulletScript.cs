@@ -27,7 +27,7 @@ public class BulletScript : MonoBehaviour
     {
         if (IsMove)
         {
-            rb.AddForce(2 * speed, 4, 0, ForceMode.Acceleration);
+            rb.AddForce(0, 4, 0, ForceMode.Acceleration);
         }
     }
     void OnCollisionEnter(Collision collision)

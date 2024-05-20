@@ -751,8 +751,11 @@ MonoBehaviour:
   - {fileID: 5194208436363278118}
   - {fileID: 6440978291185330499}
   - {fileID: 3942551812487433182}
-  power: 9
-  DeathTime: 2
+  power: 7.5
+  DeathTime: 2.5
+  col1: {fileID: -1397567198174188094}
+  col2: {fileID: 9092893567873512184}
+  health: 20
 --- !u!65 &9092893567873512184
 BoxCollider:
   m_ObjectHideFlags: 0
