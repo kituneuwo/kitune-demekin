@@ -18,7 +18,6 @@ public class BulletScript_3D : MonoBehaviour
     private float RandomNumber;
     void Start()
     {
-        RandomNumber = Random.value - 0.5f;
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.AddForce(Vector3.right * speed, ForceMode.VelocityChange);
         Invoke("DestroyBullet", 1f);
@@ -32,9 +31,13 @@ public class BulletScript_3D : MonoBehaviour
     {
         rb.useGravity = true;
         rb.velocity = new Vector3(0, 0, 0);
-        rb.AddTorque(Random.value * torque, RandomNumber * torque, RandomNumber * torque, ForceMode.Acceleration);
+        rb.AddTorque(Random.value - 0.5f * torque, Random.value - 0.5f * torque, Random.value - 0.5f * torque, ForceMode.Acceleration);
+        RandomNumber = Random.value - 0.5f;
         rb.AddForce(Vector3.forward * speed * power * RandomNumber, ForceMode.Acceleration);
+        RandomNumber = Random.value - 0.5f;
         rb.AddForce(Vector3.right * speed * power * RandomNumber, ForceMode.Acceleration);
+        RandomNumber = Random.value - 0.5f;
+        rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
         Invoke("DestroyBullet", DeathTime);
     }
     void DestroyBullet()

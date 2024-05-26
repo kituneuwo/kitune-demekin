@@ -250,10 +250,10 @@ MonoBehaviour:
   - {fileID: 6998707787874910762}
   - {fileID: 1564433054250787980}
   power: 7.5
-  DeathTime: 0
+  DeathTime: 2.5
   col1: {fileID: -5366615620576626206}
   col2: {fileID: 1569395644397648597}
-  health: 999
+  health: 2
   StartPosition: 0
 --- !u!65 &-5366615620576626206
 BoxCollider:

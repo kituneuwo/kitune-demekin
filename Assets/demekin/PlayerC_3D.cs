@@ -33,11 +33,11 @@ public class PlayerC_3D : MonoBehaviour
         {
             transform.position += new Vector3(0, 0, -Movespeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(BulletObject, new Vector3(transform.position.x + 2.6f, transform.position.y + 0.075f, transform.position.z), Quaternion.Euler(0, 0, -90));
         }
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKey(KeyCode.I))
         {
             Instantiate(EnemyObject, new Vector3(transform.position.x + 15, transform.position.y, transform.position.z), Quaternion.Euler(0, 90, 0));
         }
