@@ -20,6 +20,19 @@ public class EnemyScript : MonoBehaviour
     private BoxCollider Childcol;
     [SerializeField]
     private int health;
+    private enum StartP
+    {
+        ¶ã,
+        ¶,
+        ¶‰º,
+        ’†‰›ã,
+        ’†‰›‰º,
+        ‰Eã,
+        ‰E,
+        ‰E‰º
+    }
+    [SerializeField]
+    StartP StartPosition;
     void BreakChara()
     {
         col1.enabled = false;
