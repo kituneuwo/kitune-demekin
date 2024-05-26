@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] Children;
-    [SerializeField]
-    private GameObject[] DObject;
-    [SerializeField]
-    private float power;
-    [SerializeField]
-    private float DeathTime;
     private Rigidbody rb;
     [SerializeField]
-    private BoxCollider col1;
-    [SerializeField]
-    private BoxCollider col2;
-    private BoxCollider Childcol;
-    [SerializeField]
     private int health;
+    [System.Serializable]
+    private struct EnemyDeathP
+    {
+        public float Dpower;
+        public GameObject[] Children;
+        public GameObject[] DObject;
+        public float DeathTime;
+        public BoxCollider col1;
+        public BoxCollider col2;
+        [System.NonSerialized]
+        public BoxCollider Childcol;
+    }
+    [SerializeField]
+    private EnemyDeathP EnemyD;
     private enum StartP
     {
         ç∂è„,
@@ -35,31 +36,31 @@ public class EnemyScript : MonoBehaviour
     StartP StartPosition;
     void BreakChara()
     {
-        col1.enabled = false;
-        col2.enabled = false;
-        Invoke("DestroyChara", DeathTime);
-        for (int i = 0; i < Children.Length; i++)
+        EnemyD.col1.enabled = false;
+        EnemyD.col2.enabled = false;
+        Invoke("DestroyChara", EnemyD.DeathTime);
+        for (int i = 0; i < EnemyD.Children.Length; i++)
         {
-            Children[i].transform.DetachChildren();
+            EnemyD.Children[i].transform.DetachChildren();
         }
-        for (int i = 0; i < DObject.Length; i++)
+        for (int i = 0; i < EnemyD.DObject.Length; i++)
         {
-            Childcol = DObject[i].GetComponent<BoxCollider>();
-            Childcol.enabled = true;
-            rb = DObject[i].GetComponent<Rigidbody>();
+            EnemyD.Childcol = EnemyD.DObject[i].GetComponent<BoxCollider>();
+            EnemyD.Childcol.enabled = true;
+            rb = EnemyD.DObject[i].GetComponent<Rigidbody>();
             rb.useGravity = true;
-            rb.AddForce(Random.insideUnitSphere * power, ForceMode.VelocityChange);
+            rb.AddForce(Random.insideUnitSphere * EnemyD.Dpower, ForceMode.VelocityChange);
         }
     }
     void DestroyChara()
     {
-        for (int i = 0; i < Children.Length; i++)
+        for (int i = 0; i < EnemyD.Children.Length; i++)
         {
-            Destroy(Children[i]);
+            Destroy(EnemyD.Children[i]);
         }
-        for (int i = 0; i < DObject.Length; i++)
+        for (int i = 0; i < EnemyD.DObject.Length; i++)
         {
-            Destroy(DObject[i]);
+            Destroy(EnemyD.DObject[i]);
         }
     }
     void OnTriggerEnter(Collider other)
