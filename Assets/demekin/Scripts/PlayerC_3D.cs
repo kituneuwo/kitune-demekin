@@ -43,7 +43,7 @@ public class PlayerC_3D : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.I))
         {
-            var obj = Instantiate(EnemyObject, transform.forward * -5f + transform.position, Quaternion.Euler(0, transform.localEulerAngles.y + 180, 0));
+            var obj = Instantiate(EnemyObject, transform.forward * -15f + transform.position, Quaternion.Euler(0, transform.localEulerAngles.y + 180, 0));
             obj.name = EnemyObject.name;
         }
         transform.position += new Vector3(StageSpeed * Time.deltaTime, 0, 0);

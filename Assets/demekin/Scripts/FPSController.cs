@@ -7,8 +7,8 @@ public class FPSController : MonoBehaviour
     private const double _V = 0.1;
     private const double V = 0.3;
     float x, z;
-    float speed = 0.1f;
-
+    [SerializeField]
+    float speed;
 
     public GameObject cam;
     Quaternion cameraRot, characterRot;
@@ -83,7 +83,7 @@ public class FPSController : MonoBehaviour
 
         //transform.position += new Vector3(x,0,z);
 
-        transform.position += cam.transform.forward * z + cam.transform.right * -x;
+        transform.position -= cam.transform.forward * z + cam.transform.right * x;
 
     }
 
