@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     private Rigidbody rb;
+    private int Life;
     [SerializeField]
-    private int health;
+    private EnemyManager enemyManager;
     [System.Serializable]
     private struct EnemyDeathP
     {
@@ -21,19 +22,11 @@ public class EnemyScript : MonoBehaviour
     }
     [SerializeField]
     private EnemyDeathP EnemyD;
-    private enum StartP
+    void Start()
     {
-        ¶ã,
-        ¶,
-        ¶‰º,
-        ’†‰›ã,
-        ’†‰›‰º,
-        ‰Eã,
-        ‰E,
-        ‰E‰º
+        Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
+        Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
     }
-    [SerializeField]
-    StartP StartPosition;
     void BreakChara()
     {
         EnemyD.col1.enabled = false;
@@ -67,8 +60,8 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.layer == 7)
         {
-            health--;
-            if(health <= 0)
+            Life--;
+            if(Life <= 0)
             {
                 BreakChara();
             }

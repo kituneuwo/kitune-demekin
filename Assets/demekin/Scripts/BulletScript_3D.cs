@@ -19,13 +19,9 @@ public class BulletScript_3D : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.right * speed, ForceMode.VelocityChange);
+        rb.AddForce(-transform.forward * speed, ForceMode.VelocityChange);
+        this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 90, transform.localEulerAngles.z);
         Invoke("DestroyBullet", 1f);
-    }
-
-    void Update()
-    {
-
     }
     void OnCollisionEnter(Collision collision)
     {

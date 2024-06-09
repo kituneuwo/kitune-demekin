@@ -79,6 +79,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1569395644397648597}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 53c1b03e55515cf4fb19ca500bbfdf79,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5202573514025515012}
     - targetCorrespondingSourceObject: {fileID: 771357249643599119, guid: 53c1b03e55515cf4fb19ca500bbfdf79,
         type: 3}
       insertIndex: -1
@@ -230,7 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fd6aa5de541746853a6993b908a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  Name: "\u8D64\u9B3C"
+  enemyManager: {fileID: -5202573514025515012}
   EnemyD:
     Dpower: 9
     Children:
@@ -255,7 +260,6 @@ MonoBehaviour:
     DeathTime: 2.5
     col1: {fileID: -5366615620576626206}
     col2: {fileID: 1569395644397648597}
-  StartPosition: 0
 --- !u!65 &-5366615620576626206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -298,6 +302,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.5, z: 0.25}
   m_Center: {x: 0, y: 0.46, z: -0.625}
+--- !u!114 &-5202573514025515012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878387133218300938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d2b6f72b013a445a8d59c5a07ce96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDataBase: {fileID: 11400000, guid: 5ca5df1d36198a14aa8bda5ff1d95aed, type: 2}
 --- !u!1 &1564433054250787980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1532413761912208855, guid: 53c1b03e55515cf4fb19ca500bbfdf79,

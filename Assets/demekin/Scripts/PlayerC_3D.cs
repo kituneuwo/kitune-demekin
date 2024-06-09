@@ -39,11 +39,12 @@ public class PlayerC_3D : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            Instantiate(BulletObject, new Vector3(transform.position.x + 2.6f, transform.position.y + 0.075f, transform.position.z), Quaternion.Euler(0, 0, -90));
+            Instantiate(BulletObject, transform.forward * -2.4f + transform.position, Quaternion.Euler(0, transform.localEulerAngles.y, -90));
         }
         if (Input.GetKey(KeyCode.I))
         {
-            Instantiate(EnemyObject, new Vector3(transform.position.x + 30, transform.position.y, transform.position.z), Quaternion.Euler(0, 90, 0));
+            var obj = Instantiate(EnemyObject, transform.forward * -5f + transform.position, Quaternion.Euler(0, transform.localEulerAngles.y + 180, 0));
+            obj.name = EnemyObject.name;
         }
         transform.position += new Vector3(StageSpeed * Time.deltaTime, 0, 0);
     }
