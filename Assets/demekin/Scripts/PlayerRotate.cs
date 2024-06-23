@@ -15,23 +15,27 @@ public class PlayerRotate : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.eulerAngles = new Vector3(0, 0, PlayerObject.transform.localEulerAngles.z - 30);
+            transform.localEulerAngles = new Vector3(PlayerObject.transform.localEulerAngles.x, 0, PlayerObject.transform.localEulerAngles.z - 30);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.eulerAngles = new Vector3(0, 0, PlayerObject.transform.localEulerAngles.z + 30);
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            transform.eulerAngles = new Vector3(PlayerObject.transform.eulerAngles.x - 10, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            transform.eulerAngles = new Vector3(PlayerObject.transform.eulerAngles.x + 10, 0, 0);
+            transform.localEulerAngles = new Vector3(PlayerObject.transform.localEulerAngles.x, 0, PlayerObject.transform.localEulerAngles.z + 30);
         }
         else
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.localEulerAngles = new Vector3(-20, 0, PlayerObject.transform.localEulerAngles.z);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transform.localEulerAngles = new Vector3(20, 0, PlayerObject.transform.localEulerAngles.z);
+        }
+        else
+        {
+            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, transform.localEulerAngles.z);
         }
     }
 }
