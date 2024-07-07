@@ -9,6 +9,7 @@ public class EnemyData : ScriptableObject
 {
     public enum KindOfEnemy
     {
+        Object,
         Enemy,
         Boss,
         RareEnemy

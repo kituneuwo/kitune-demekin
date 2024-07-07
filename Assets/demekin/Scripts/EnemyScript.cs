@@ -15,8 +15,8 @@ public class EnemyScript : MonoBehaviour
         public GameObject[] Children;
         public GameObject[] DObject;
         public float DeathTime;
-        public BoxCollider col1;
-        public BoxCollider col2;
+        public BoxCollider col;
+        public BoxCollider Triggercol;
         [System.NonSerialized]
         public BoxCollider Childcol;
     }
@@ -29,8 +29,8 @@ public class EnemyScript : MonoBehaviour
     }
     void BreakChara()
     {
-        EnemyD.col1.enabled = false;
-        EnemyD.col2.enabled = false;
+        EnemyD.col.enabled = false;
+        EnemyD.Triggercol.enabled = false;
         Invoke("DestroyChara", EnemyD.DeathTime);
         for (int i = 0; i < EnemyD.Children.Length; i++)
         {

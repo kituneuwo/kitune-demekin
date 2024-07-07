@@ -58,10 +58,95 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6231984183686314756, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6102529121630251102, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6023809482470465007, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4655311004105578849, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3189337161613168139, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2597013687144310810, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2174774598165963919, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1318358063678142023, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -490518507886800783, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 167332750736046541, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 771357249643599119, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 028dd9816cf37974b89ba4cef5130ee8,
         type: 3}
       propertyPath: m_Name
-      value: akudo-fuao
+      value: "\u9752\u9B3C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532413761912208855, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665006068690826149, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829503976438926429, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988076735953030696, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830387873988221653, guid: 028dd9816cf37974b89ba4cef5130ee8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -642,7 +727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fd6aa5de541746853a6993b908a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u9752\u9B3C"
   enemyManager: {fileID: -2448764117871504419}
   EnemyD:
     Dpower: 9
@@ -666,8 +750,8 @@ MonoBehaviour:
     - {fileID: 2044177102469817323}
     - {fileID: 7551406322324292941}
     DeathTime: 2.5
-    col1: {fileID: -3116486328127788465}
-    col2: {fileID: -5556268359116841063}
+    col: {fileID: -3116486328127788465}
+    Triggercol: {fileID: -5556268359116841063}
 --- !u!65 &-3116486328127788465
 BoxCollider:
   m_ObjectHideFlags: 0
