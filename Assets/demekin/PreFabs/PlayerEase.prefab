@@ -73,6 +73,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerObject: {fileID: 0}
-  torque: 75
+  torque: 80
   limitup: 280
   limitdown: 80
