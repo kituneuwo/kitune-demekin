@@ -12,8 +12,8 @@ public class PlayerC_3D : MonoBehaviour
     private GameObject BulletObject;
     [SerializeField]
     private GameObject RotateObject;
-    [SerializeField]
-    private float torque;
+    [SerializeField, Range(0f, 1f)]
+    private float RotateSpeed;
     private Rigidbody rb;
     void Start()
     {
@@ -21,9 +21,8 @@ public class PlayerC_3D : MonoBehaviour
     }
     void Update()
     {
-        rb.AddForce(transform.forward * Movespeed * Time.deltaTime, ForceMode.VelocityChange);
-        Debug.Log(RotateObject.transform.rotation);
-        transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, 0);
+        transform.position += transform.forward * Movespeed * Time.deltaTime;
+        transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
         if (Input.GetKey(KeyCode.Space))
         {
             Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(0, transform.localEulerAngles.y, -90));
