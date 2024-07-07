@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfEnemy: 1
   EnemyName: "\u7DD1\u9B3C"
-  EnemyInformation: "(\u8AAC\u660E\u6587)"
-  EnemyLife: 1
+  EnemyInformation: "\u5272\u3068\u56FA\u3044\u9B3C\u3002\u304B\u305F\u3044"
+  EnemyLife: 3
   EnemyDamage: 1
-  EnemySpeed: 3
+  EnemySpeed: 1
