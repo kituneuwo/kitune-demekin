@@ -54,6 +54,5 @@ public class NewPlayerRotate : MonoBehaviour
         }
         transform.rotation = Quaternion.Euler(RotateNum);
         transform.position = PlayerObject.transform.position;
-        Debug.Log(transform.localEulerAngles.x);
     }
 }
