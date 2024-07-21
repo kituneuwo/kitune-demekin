@@ -7,6 +7,9 @@ public class BulletScript_3D : MonoBehaviour
     private Rigidbody rb;
     [SerializeField]
     private float speed;
+    public float BulletSpeed { 
+        get { return speed; }
+    }
     [SerializeField]
     private float power;
     [SerializeField]
