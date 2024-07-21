@@ -23,7 +23,7 @@ public class PlayerC_3D : MonoBehaviour
     {
         transform.position += transform.forward * Movespeed * Time.deltaTime;
         transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
         }

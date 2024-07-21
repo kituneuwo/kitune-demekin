@@ -18,7 +18,7 @@ public class EnemyData : ScriptableObject
     private KindOfEnemy kindOfEnemy;
     [SerializeField]
     private string EnemyName;
-    [SerializeField]
+    [SerializeField,TextArea]
     private string EnemyInformation;
     [SerializeField]
     private int EnemyLife;

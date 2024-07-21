@@ -1090,11 +1090,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Movespeed: 15
-  EnemyObject: {fileID: 8164656593614931403, guid: 01ed52cbbc4657f4989047b3e4902cc2,
+  EnemyObject: {fileID: 7059961865653634665, guid: 16c1865ad5158ab4cb1a6b7ec1e2c8b4,
     type: 3}
   BulletObject: {fileID: 7212132830864749318, guid: 94c7f56d5b32389409e8dd4557b86196,
     type: 3}
-  RotateObject: {fileID: 0}
+  RotateObject: {fileID: 6020555798466484592, guid: 7f01eb664e4d3db4880d32bfc772c055,
+    type: 3}
   RotateSpeed: 0.1
 --- !u!54 &4613762734063851108
 Rigidbody:
