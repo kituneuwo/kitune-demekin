@@ -20,16 +20,18 @@ public class EnemyShoot : MonoBehaviour
     private float limitdown;
     [SerializeField]
     private GameObject BulletObject;
+    private PlayerC_3D playerC = new PlayerC_3D();
     void Update()
     {
-        if(Vector3.Distance(this.transform.position,playerObj.transform.position) < shootDistance)
-        {
-            MoveSpeedNow = playerObj.transform.position - MoveSpeedBefore;
-            MoveSpeedBefore = playerObj.transform.position;
-            TargetDistance = Vector3.Distance(this.transform.position, playerObj.transform.position);
-            MoveSpeedAfter = MoveSpeedNow * TargetDistance / Bulletspeed / Time.deltaTime + playerObj.transform.position;
-            transform.LookAt(MoveSpeedAfter);
-            Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
-        }
+            if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance)
+            {
+                MoveSpeedNow = playerObj.transform.position - MoveSpeedBefore;
+                MoveSpeedBefore = playerObj.transform.position;
+                TargetDistance = Vector3.Distance(this.transform.position, playerObj.transform.position);
+                MoveSpeedAfter = MoveSpeedNow * TargetDistance / Bulletspeed / Time.deltaTime + playerObj.transform.position;
+                transform.LookAt(MoveSpeedAfter);
+                Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
+            }
+        
     }
 }
