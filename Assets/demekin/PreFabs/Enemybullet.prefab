@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2b9a7d7040b3a4fa15d68e9910fa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 100
   power: 6
   torque: 350
   DeathTime: 0.25
