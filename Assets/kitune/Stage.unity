@@ -16843,6 +16843,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510086744457472736, guid: 7f01eb664e4d3db4880d32bfc772c055,
         type: 3}
+      propertyPath: limitup
+      value: 310
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510086744457472736, guid: 7f01eb664e4d3db4880d32bfc772c055,
+        type: 3}
+      propertyPath: limitdown
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510086744457472736, guid: 7f01eb664e4d3db4880d32bfc772c055,
+        type: 3}
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 315177061}
