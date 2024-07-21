@@ -17,6 +17,8 @@ public class BulletScript_3D : MonoBehaviour
     [SerializeField]
     private float DeathTime;
     [SerializeField]
+    private float LengthTime;
+    [SerializeField]
     private float plus;
     private float RandomNumber;
     void Start()
@@ -24,7 +26,7 @@ public class BulletScript_3D : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
         this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 90, transform.localEulerAngles.z);
-        Invoke("DestroyBullet", 1f);
+        Invoke("DestroyBullet", LengthTime);
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -38,6 +40,10 @@ public class BulletScript_3D : MonoBehaviour
         RandomNumber = Random.value - 0.5f;
         rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
         Invoke("DestroyBullet", DeathTime);
+    }
+    void OnTrrigerEnter(Collider other)
+    {
+        Debug.Log("Hit");
     }
     void DestroyBullet()
     {

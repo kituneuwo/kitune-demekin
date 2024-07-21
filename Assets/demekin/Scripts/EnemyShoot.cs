@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    private BulletScript_3D Bulletspeed = new BulletScript_3D();
+    [SerializeField]
+    private float Bulletspeed;
     [SerializeField]
     private GameObject playerObj;
     [SerializeField]
@@ -17,6 +18,8 @@ public class EnemyShoot : MonoBehaviour
     private float limitup;
     [SerializeField]
     private float limitdown;
+    [SerializeField]
+    private GameObject BulletObject;
     void Update()
     {
         if(Vector3.Distance(this.transform.position,playerObj.transform.position) < shootDistance)
@@ -24,11 +27,9 @@ public class EnemyShoot : MonoBehaviour
             MoveSpeedNow = playerObj.transform.position - MoveSpeedBefore;
             MoveSpeedBefore = playerObj.transform.position;
             TargetDistance = Vector3.Distance(this.transform.position, playerObj.transform.position);
-            MoveSpeedAfter = playerObj.transform.position + MoveSpeedNow;
-            //* TargetDistance / (Bulletspeed.BulletSpeed / 0.5f) / Time.deltaTime;
-            Debug.Log(MoveSpeedNow@+ "(ˆÚ“®‹——£)");
-            Debug.Log(MoveSpeedAfter + "(—\‘ªæ)");
+            MoveSpeedAfter = MoveSpeedNow * TargetDistance / Bulletspeed / Time.deltaTime + playerObj.transform.position;
             transform.LookAt(MoveSpeedAfter);
+            Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
         }
     }
 }

@@ -129,6 +129,7 @@ MonoBehaviour:
   power: 11
   torque: 350
   DeathTime: 0.75
+  LengthTime: 1
   plus: 1.5
 --- !u!136 &5227374798852815175
 CapsuleCollider:
