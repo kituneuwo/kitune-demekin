@@ -15,7 +15,7 @@ public class PlayerC_3D : MonoBehaviour
     [SerializeField, Range(0f, 1f)]
     private float RotateSpeed;
     private Rigidbody rb;
-    public int PlayerLife;
+    public static int PlayerLife;
     [System.Serializable]
     private struct PlayerDeathP
     {

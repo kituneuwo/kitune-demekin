@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -461,12 +461,12 @@ PrefabInstance:
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008497743
+      value: -0.000000008497743
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000013428578
+      value: 0.0000000013428578
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
@@ -573,6 +573,25 @@ MonoBehaviour:
   m_YawDamping: 1
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!1 &1401034057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3420501477129776967, guid: 4671324073ad94d45a56f8cb1510d4e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7995700185412049021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1401034060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401034057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d2b6f72b013a445a8d59c5a07ce96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDataBase: {fileID: 11400000, guid: 5ca5df1d36198a14aa8bda5ff1d95aed, type: 2}
 --- !u!1001 &1483468399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -973,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063975344}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15608834, y: 0.000000008497743, z: -0.0000000013428578, w: 0.98774314}
+  m_LocalRotation: {x: 0.15608834, y: -0.000000008497743, z: 0.0000000013428578, w: 0.98774314}
   m_LocalPosition: {x: -65, y: 12, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -996,7 +1015,7 @@ PrefabInstance:
     - target: {fileID: 2591135406321169752, guid: c0aaaa2b917b0214c9580cb48e6e5ebc,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3891211016792580359, guid: c0aaaa2b917b0214c9580cb48e6e5ebc,
         type: 3}
@@ -1269,15 +1288,9 @@ PrefabInstance:
       objectReference: {fileID: 210985504}
     - target: {fileID: 528581886945898221, guid: 4671324073ad94d45a56f8cb1510d4e0,
         type: 3}
-      propertyPath: Bulletspeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 528581886945898221, guid: 4671324073ad94d45a56f8cb1510d4e0,
-        type: 3}
-      propertyPath: BulletObject
+      propertyPath: enemyManager
       value: 
-      objectReference: {fileID: 5870586731001345321, guid: cb372cbb66eef3e4888e1ff7c959f39b,
-        type: 3}
+      objectReference: {fileID: 1401034060}
     - target: {fileID: 1840655768659628430, guid: 4671324073ad94d45a56f8cb1510d4e0,
         type: 3}
       propertyPath: m_Layer
@@ -1403,6 +1416,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3420501477129776967, guid: 4671324073ad94d45a56f8cb1510d4e0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401034060}
     - targetCorrespondingSourceObject: {fileID: 6070564891492326384, guid: 4671324073ad94d45a56f8cb1510d4e0,
         type: 3}
       insertIndex: 1
