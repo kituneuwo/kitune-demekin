@@ -1547,6 +1547,7 @@ MonoBehaviour:
   RotateObject: {fileID: 6020555798466484592, guid: 7f01eb664e4d3db4880d32bfc772c055,
     type: 3}
   RotateSpeed: 0.1
+  maxSpeed: 10
   PlayerD:
     Dpower: 10
     Children:

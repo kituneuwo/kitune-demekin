@@ -14,9 +14,13 @@ public class PlayerC_3D : MonoBehaviour
     private GameObject RotateObject;
     [SerializeField, Range(0f, 1f)]
     private float RotateSpeed;
+    [SerializeField]
+    private float maxSpeed;
     private Rigidbody rb;
     public static int PlayerLife;
     private bool IsDeath;
+    private float Wheel;
+    private float PlusSpeed;
     [System.Serializable]
     private struct PlayerDeathP
     {
@@ -38,9 +42,19 @@ public class PlayerC_3D : MonoBehaviour
     }
     void Update()
     {
-        if(PlayerLife > 0 && !IsDeath)
+        Wheel = Input.GetAxis("Mouse ScrollWheel") * 10;
+        PlusSpeed += Wheel;
+        if(PlusSpeed > maxSpeed)
         {
-            transform.position += transform.forward * Movespeed * Time.deltaTime;
+            PlusSpeed = maxSpeed;
+        }
+        else if(PlusSpeed < -Movespeed)
+        {
+            PlusSpeed = -Movespeed;
+        }
+        if (PlayerLife > 0 && !IsDeath)
+        {
+            transform.position += transform.forward * (Movespeed + PlusSpeed) * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
         }
         if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
