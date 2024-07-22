@@ -14,9 +14,15 @@ public class WeaponData : ScriptableObject
     [SerializeField]
     private int WeaponDamage;
     [SerializeField]
-    private float WeaponRapidFireRate;
+    private float WeaponFireRate;
     [SerializeField]
     private float BulletSpeed;
+    [SerializeField]
+    private float BulletDeathTime;
+    [SerializeField]
+    private int maxUpAngle;
+    [SerializeField]
+    private int maxDownAngle;
     public string GetWeaponName()
     {
         return WeaponName;
@@ -29,12 +35,24 @@ public class WeaponData : ScriptableObject
     {
         return WeaponDamage;
     }
-    public float GetWeaponRapidFireRate()
+    public float GetWeaponFireRate()
     {
-        return WeaponRapidFireRate;
+        return WeaponFireRate;
     }
     public float GetBulletSpeed()
     {
         return BulletSpeed;
+    }
+    public float GetBulletDeathTime()
+    {
+        return BulletDeathTime;
+    }
+    public int GetMaxUpAngle()
+    {
+        return maxUpAngle;
+    }
+    public int GetMaxDownAngle()
+    {
+        return maxDownAngle;
     }
 }

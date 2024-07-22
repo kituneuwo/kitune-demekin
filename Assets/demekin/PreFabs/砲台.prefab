@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 2171282248824591565}
   - component: {fileID: 885899622256440443}
   - component: {fileID: 5909489922025010231}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,8 +824,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3420501477129776967}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.580306, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.571908, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -849,12 +849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc287bf816dc6a542a9c7e0428c7b0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bulletspeed: 75
-  playerObj: {fileID: 3891211016792580359, guid: c0aaaa2b917b0214c9580cb48e6e5ebc,
-    type: 3}
+  playerObj: {fileID: 0}
   shootDistance: 100
-  limitup: 0
-  limitdown: 0
   BulletObject: {fileID: 5870586731001345321, guid: cb372cbb66eef3e4888e1ff7c959f39b,
     type: 3}
   enemyManager: {fileID: 8194907571643656502}
@@ -1261,7 +1257,7 @@ GameObject:
   - component: {fileID: 7726079979785585632}
   - component: {fileID: 4515237912416538827}
   - component: {fileID: 4846753531817369612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1638,7 @@ GameObject:
   - component: {fileID: 8834537253527145780}
   - component: {fileID: 952626422782870817}
   - component: {fileID: 220096170759656565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cylinder_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2208,7 +2204,7 @@ GameObject:
   - component: {fileID: 199651143148563068}
   - component: {fileID: 514909273042082924}
   - component: {fileID: 6862068759241878463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u7832\u53F0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2247,7 +2243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 199651143148563068}
   EnemyD:
-    Dpower: 10
+    Dpower: 13
     Children:
     - {fileID: 8975377759865418116}
     - {fileID: 3420501477129776967}

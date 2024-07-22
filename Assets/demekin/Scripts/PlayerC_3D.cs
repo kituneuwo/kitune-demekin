@@ -16,6 +16,7 @@ public class PlayerC_3D : MonoBehaviour
     private float RotateSpeed;
     private Rigidbody rb;
     public static int PlayerLife;
+    private bool IsDeath;
     [System.Serializable]
     private struct PlayerDeathP
     {
@@ -31,28 +32,33 @@ public class PlayerC_3D : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        IsDeath = false;
         PlayerLife = 200;
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if(PlayerLife > 0)
+        if(PlayerLife > 0 && !IsDeath)
         {
             transform.position += transform.forward * Movespeed * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
         {
             Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
         }
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.I) && !IsDeath)
         {
             var obj = Instantiate(EnemyObject, transform.forward * 15f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y + 180, 0));
             obj.name = EnemyObject.name;
         }
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(KeyCode.P) && !IsDeath)
         {
             PlayerLife = 0;
+        }
+        if (PlayerLife <= 0 && !IsDeath)
+        {
+            IsDeath = true;
             BreakPlayer();
         }
     }
@@ -62,19 +68,10 @@ public class PlayerC_3D : MonoBehaviour
         {
             PlayerLife = 0;
         }
-        else
-        {
-            PlayerLife--;
-        }
-        if (PlayerLife <= 0)
-        {
-            BreakPlayer();
-        }
     }
     void BreakPlayer()
     {
         PlayerD.col.enabled = false;
-        Invoke("Stop", PlayerD.DeathTime - 0.05f);
         Invoke("DestroyPlayer", PlayerD.DeathTime);
         for (int i = 0; i < PlayerD.Children.Length; i++)
         {
@@ -88,6 +85,7 @@ public class PlayerC_3D : MonoBehaviour
             rb.useGravity = true;
             rb.AddForce(Random.insideUnitSphere * PlayerD.Dpower, ForceMode.VelocityChange);
         }
+        Invoke("Stop", PlayerD.DeathTime - 0.05f);
     }
     void DestroyPlayer()
     {
