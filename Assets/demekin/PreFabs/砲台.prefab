@@ -849,8 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc287bf816dc6a542a9c7e0428c7b0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 0}
-  shootDistance: 100
+  playerObj: {fileID: 8928810203478190138}
   BulletObject: {fileID: 5870586731001345321, guid: cb372cbb66eef3e4888e1ff7c959f39b,
     type: 3}
   enemyManager: {fileID: 8194907571643656502}
