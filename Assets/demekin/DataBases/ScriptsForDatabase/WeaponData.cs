@@ -18,11 +18,20 @@ public class WeaponData : ScriptableObject
     [SerializeField]
     private float BulletSpeed;
     [SerializeField]
+    private float BulletSize;
+    [SerializeField]
     private float BulletDeathTime;
     [SerializeField]
     private int maxUpAngle;
     [SerializeField]
     private int maxDownAngle;
+    [SerializeField]
+    private int ShotVolume;
+    [SerializeField]
+    private float BulletAccuracy;
+    [SerializeField]
+    private int ShootDistance;
+
     public string GetWeaponName()
     {
         return WeaponName;
@@ -54,5 +63,21 @@ public class WeaponData : ScriptableObject
     public int GetMaxDownAngle()
     {
         return maxDownAngle;
+    }
+    public float GetBulletSize()
+    {
+        return BulletSize;
+    }
+    public float GetShotVolume()
+    {
+        return ShotVolume;
+    }
+    public float GetBulletAccuracy()
+    {
+        return BulletAccuracy;
+    }
+    public int GetShootDistance()
+    {
+        return ShootDistance;
     }
 }

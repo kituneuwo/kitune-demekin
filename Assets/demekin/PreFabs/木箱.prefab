@@ -4630,7 +4630,7 @@ GameObject:
   - component: {fileID: 5349125388061950630}
   - component: {fileID: 6850728571148652372}
   - component: {fileID: 2488338759793892846}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: "\u6728\u7BB1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4745,7 +4745,7 @@ MonoBehaviour:
     - {fileID: 9178057750227079213}
     - {fileID: 6500050291885697216}
     - {fileID: 1566164667817346733}
-    DeathTime: 1.5
+    DeathTime: 4
     col: {fileID: 3187601290820918300}
     Triggercol: {fileID: 2488338759793892846}
 --- !u!114 &6850728571148652372

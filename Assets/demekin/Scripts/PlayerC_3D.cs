@@ -76,18 +76,23 @@ public class PlayerC_3D : MonoBehaviour
             BreakPlayer();
         }
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
+        if(collision.gameObject.layer == 4)
+        {
+            PlayerLife--;
+        }
         if(collision.gameObject.layer != 9)
         {
             PlayerLife = 0;
         }
+        Debug.Log(PlayerLife);
     }
     void BreakPlayer()
     {
         PlayerD.col.enabled = false;
         Invoke("DestroyPlayer", PlayerD.DeathTime);
-        for (int i = 0; i < PlayerD.Children.Length; i++)
+        for (int i = 1; i < PlayerD.Children.Length; i++)
         {
             PlayerD.Children[i].transform.DetachChildren();
         }
@@ -99,21 +104,16 @@ public class PlayerC_3D : MonoBehaviour
             rb.useGravity = true;
             rb.AddForce(Random.insideUnitSphere * PlayerD.Dpower, ForceMode.VelocityChange);
         }
-        Invoke("Stop", PlayerD.DeathTime - 0.05f);
     }
     void DestroyPlayer()
     {
-        for (int i = 0; i < PlayerD.Children.Length; i++)
+        for (int i = 1; i < PlayerD.Children.Length; i++)
         {
             Destroy(PlayerD.Children[i]);
         }
-        for (int i = 0; i < PlayerD.DObject.Length; i++)
+        for (int i = 1; i < PlayerD.DObject.Length; i++)
         {
             Destroy(PlayerD.DObject[i]);
         }
-    }
-    private void Stop()
-    {
-        Time.timeScale = 0;
     }
 }
