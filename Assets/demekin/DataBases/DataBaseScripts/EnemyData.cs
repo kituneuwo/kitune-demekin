@@ -23,8 +23,6 @@ public class EnemyData : ScriptableObject
     [SerializeField]
     private int EnemyLife;
     [SerializeField]
-    private int EnemyDamage;
-    [SerializeField]
     private float EnemySpeed;
 
     public KindOfEnemy GetKindOfEnemy()
@@ -43,10 +41,6 @@ public class EnemyData : ScriptableObject
     public int GetEnemyLife()
     {
         return EnemyLife;
-    }
-    public int GetEnemyDamage()
-    {
-        return EnemyDamage;
     }
     public float GetEnemySpeed()
     {

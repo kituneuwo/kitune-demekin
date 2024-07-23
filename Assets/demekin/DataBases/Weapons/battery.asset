@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e927eba572170428f91648c97f1df0, type: 3}
+  m_Name: battery
+  m_EditorClassIdentifier: 
+  WeaponName: "\u7832\u5854"
+  WeaponInformation: "\u9AD8\u5A01\u529B\u30FB\u9577\u5C04\u7A0B\u3092\u517C\u306D\u5099\u3048\u305F\u6B66\u5668\u3002\u9023\u5C04\u901F\u5EA6\u306F\u9045\u3081"
+  WeaponDamage: 10
+  WeaponRapidFireRate: 1
+  BulletSpeed: 75

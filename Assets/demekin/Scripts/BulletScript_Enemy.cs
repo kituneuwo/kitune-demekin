@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript_3D : MonoBehaviour
+public class BulletScript_Enemy : MonoBehaviour
 {
     private Rigidbody rb;
     [SerializeField]
@@ -28,7 +28,7 @@ public class BulletScript_3D : MonoBehaviour
         this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 90, transform.localEulerAngles.z);
         Invoke("DestroyBullet", LengthTime);
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTrrigerEnter(Collider other)
     {
         rb.useGravity = true;
         rb.velocity = new Vector3(0, 0, 0);
