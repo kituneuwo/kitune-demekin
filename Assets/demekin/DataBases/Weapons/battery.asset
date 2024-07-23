@@ -17,7 +17,7 @@ MonoBehaviour:
   WeaponDamage: 5
   WeaponFireRate: 3
   BulletSpeed: 90
-  BulletSize: 0
+  BulletSize: 1
   BulletDeathTime: 1
   maxUpAngle: 320
   maxDownAngle: 30
