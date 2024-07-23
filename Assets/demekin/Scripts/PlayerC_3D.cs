@@ -14,8 +14,13 @@ public class PlayerC_3D : MonoBehaviour
     private GameObject RotateObject;
     [SerializeField, Range(0f, 1f)]
     private float RotateSpeed;
+    [SerializeField]
+    private float maxSpeed;
     private Rigidbody rb;
     public static int PlayerLife;
+    private bool IsDeath;
+    private float Wheel;
+    private float PlusSpeed;
     [System.Serializable]
     private struct PlayerDeathP
     {
@@ -31,52 +36,63 @@ public class PlayerC_3D : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        IsDeath = false;
         PlayerLife = 200;
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if(PlayerLife > 0)
+        Wheel = Input.GetAxis("Mouse ScrollWheel") * 10;
+        PlusSpeed += Wheel;
+        if(PlusSpeed > maxSpeed)
         {
-            transform.position += transform.forward * Movespeed * Time.deltaTime;
+            PlusSpeed = maxSpeed;
+        }
+        else if(PlusSpeed < -Movespeed)
+        {
+            PlusSpeed = -Movespeed;
+        }
+        if (PlayerLife > 0 && !IsDeath)
+        {
+            transform.position += transform.forward * (Movespeed + PlusSpeed) * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
         {
             Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
         }
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.I) && !IsDeath)
         {
             var obj = Instantiate(EnemyObject, transform.forward * 15f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y + 180, 0));
             obj.name = EnemyObject.name;
         }
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(KeyCode.P) && !IsDeath)
         {
             PlayerLife = 0;
+        }
+        if (PlayerLife <= 0 && !IsDeath)
+        {
+            IsDeath = true;
             BreakPlayer();
         }
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
+        if(collision.gameObject.layer == 4)
+        {
+            PlayerLife--;
+        }
         if(collision.gameObject.layer != 9)
         {
             PlayerLife = 0;
         }
-        else
-        {
-            PlayerLife--;
-        }
-        if (PlayerLife <= 0)
-        {
-            BreakPlayer();
-        }
+        Debug.Log(PlayerLife);
     }
     void BreakPlayer()
     {
         PlayerD.col.enabled = false;
-        Invoke("Stop", PlayerD.DeathTime - 0.05f);
         Invoke("DestroyPlayer", PlayerD.DeathTime);
-        for (int i = 0; i < PlayerD.Children.Length; i++)
+        for (int i = 1; i < PlayerD.Children.Length; i++)
         {
             PlayerD.Children[i].transform.DetachChildren();
         }
@@ -91,17 +107,13 @@ public class PlayerC_3D : MonoBehaviour
     }
     void DestroyPlayer()
     {
-        for (int i = 0; i < PlayerD.Children.Length; i++)
+        for (int i = 1; i < PlayerD.Children.Length; i++)
         {
             Destroy(PlayerD.Children[i]);
         }
-        for (int i = 0; i < PlayerD.DObject.Length; i++)
+        for (int i = 1; i < PlayerD.DObject.Length; i++)
         {
             Destroy(PlayerD.DObject[i]);
         }
-    }
-    private void Stop()
-    {
-        Time.timeScale = 0;
     }
 }

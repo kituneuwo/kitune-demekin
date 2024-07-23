@@ -7,28 +7,28 @@ public class BulletScript_Enemy : MonoBehaviour
     private Rigidbody rb;
     [SerializeField]
     private float speed;
-    public float BulletSpeed { 
-        get { return speed; }
-    }
     [SerializeField]
     private float power;
     [SerializeField]
     private float torque;
     [SerializeField]
     private float DeathTime;
-    [SerializeField]
     private float LengthTime;
     [SerializeField]
     private float plus;
     private float RandomNumber;
+    [SerializeField]
+    private EnemyManager enemyManager;
     void Start()
     {
+        LengthTime = enemyManager.GetWeapon(this.gameObject.name).GetBulletDeathTime();
+        speed = enemyManager.GetWeapon(this.gameObject.name).GetBulletSpeed();
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
         this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 90, transform.localEulerAngles.z);
         Invoke("DestroyBullet", LengthTime);
     }
-    void OnTrrigerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         rb.useGravity = true;
         rb.velocity = new Vector3(0, 0, 0);
@@ -38,8 +38,10 @@ public class BulletScript_Enemy : MonoBehaviour
         RandomNumber = Random.value - 0.5f;
         rb.AddForce(Vector3.right * speed * power * RandomNumber, ForceMode.Acceleration);
         RandomNumber = Random.value - 0.5f;
-        rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
+        rb.AddForce(Vector3.up *  speed * power * RandomNumber, ForceMode.Acceleration);
         Invoke("DestroyBullet", DeathTime);
+        PlayerC_3D.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
+        Debug.Log(PlayerC_3D.PlayerLife);
     }
     void DestroyBullet()
     {
