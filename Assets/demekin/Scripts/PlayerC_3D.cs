@@ -92,7 +92,7 @@ public class PlayerC_3D : MonoBehaviour
     {
         PlayerD.col.enabled = false;
         Invoke("DestroyPlayer", PlayerD.DeathTime);
-        for (int i = 1; i < PlayerD.Children.Length; i++)
+        for (int i = 0; i < PlayerD.Children.Length; i++)
         {
             PlayerD.Children[i].transform.DetachChildren();
         }
@@ -107,7 +107,7 @@ public class PlayerC_3D : MonoBehaviour
     }
     void DestroyPlayer()
     {
-        for (int i = 1; i < PlayerD.Children.Length; i++)
+        for (int i = 0; i < PlayerD.Children.Length; i++)
         {
             Destroy(PlayerD.Children[i]);
         }

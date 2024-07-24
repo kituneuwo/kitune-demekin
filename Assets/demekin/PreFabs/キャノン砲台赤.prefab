@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 528581886945898221}
   - component: {fileID: 8194907571643656502}
   m_Layer: 6
-  m_Name: "\u7832\u5854"
+  m_Name: "\u30AD\u30E3\u30CE\u30F3\u7832\u5854\u8D64"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2204,7 +2204,7 @@ GameObject:
   - component: {fileID: 514909273042082924}
   - component: {fileID: 6862068759241878463}
   m_Layer: 6
-  m_Name: "\u7832\u53F0"
+  m_Name: "\u30AD\u30E3\u30CE\u30F3\u7832\u53F0\u8D64"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2303,8 +2303,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.75, z: 2}
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Size: {x: 1, y: 2.5, z: 2}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!65 &6862068759241878463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2322,7 +2322,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.95, z: 2.2}
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Size: {x: 1.2, y: 2.7, z: 2.2}
+  m_Center: {x: 0, y: 1.25, z: 0}

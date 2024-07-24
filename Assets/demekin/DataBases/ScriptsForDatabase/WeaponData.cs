@@ -31,6 +31,8 @@ public class WeaponData : ScriptableObject
     private float BulletAccuracy;
     [SerializeField]
     private int ShootDistance;
+    [SerializeField]
+    private bool IsLookAtBefore;
 
     public string GetWeaponName()
     {
@@ -79,5 +81,9 @@ public class WeaponData : ScriptableObject
     public int GetShootDistance()
     {
         return ShootDistance;
+    }
+    public bool GetIsLookAtBefore()
+    {
+        return IsLookAtBefore;
     }
 }

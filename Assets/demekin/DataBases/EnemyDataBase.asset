@@ -18,5 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee0ff9a26596ebc4dab0c3351367fec2, type: 2}
   - {fileID: 11400000, guid: 4e3969b4f89a7714881375e2762310ce, type: 2}
   - {fileID: 11400000, guid: db7a8e767f742a149aec679a7de8cada, type: 2}
+  - {fileID: 11400000, guid: 69454019ac918ad459aca282dcd8aa99, type: 2}
   weaponLists:
   - {fileID: 11400000, guid: 102351a36ed45b44ea253bf9d4ece666, type: 2}
+  - {fileID: 11400000, guid: 7c2b809d5b9428648a670041e4e1c3d1, type: 2}

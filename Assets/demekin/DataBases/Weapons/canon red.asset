@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8e927eba572170428f91648c97f1df0, type: 3}
-  m_Name: battery
+  m_Name: canon red
   m_EditorClassIdentifier: 
-  WeaponName: "\u7832\u5854"
-  WeaponInformation: "\u9AD8\u5A01\u529B\u30FB\u9577\u5C04\u7A0B\u3092\u517C\u306D\u5099\u3048\u305F\u6B66\u5668\u3002\u9023\u5C04\u901F\u5EA6\u306F\u9045\u3081"
-  WeaponDamage: 5
+  WeaponName: "\u30AD\u30E3\u30CE\u30F3\u7832\u5854\u8D64"
+  WeaponInformation: "\u9AD8\u5A01\u529B\u30FB\u9577\u5C04\u7A0B\u306E\u5F3E\u3092\u767A\u5C04\u3059\u308B\u7832\u53F0\u3002\u9023\u5C04\u901F\u5EA6\u306F\u9045\u3081"
+  WeaponDamage: 15
   WeaponFireRate: 3
   BulletSpeed: 90
   BulletSize: 1
@@ -24,3 +24,4 @@ MonoBehaviour:
   ShotVolume: 1
   BulletAccuracy: 12
   ShootDistance: 90
+  IsLookAtBefore: 1

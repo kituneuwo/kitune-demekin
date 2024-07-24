@@ -6,6 +6,7 @@ public class EnemyShoot : MonoBehaviour
 {
     [SerializeField]
     private GameObject playerObj;
+    private bool IsLookAtBefore;
     private int shootDistance;
     private float TargetDistance;
     private Vector3 MoveSpeedBefore;
@@ -18,10 +19,9 @@ public class EnemyShoot : MonoBehaviour
     private GameObject Child;
     private int maxUpAngle;
     private int maxDownAngle;
-    private float AnglePlusX;
-    private float AnglePlusY;
     void Start()
     {
+        IsLookAtBefore = enemyManager.GetWeapon(this.gameObject.name).GetIsLookAtBefore();
         shootDistance = enemyManager.GetWeapon(this.gameObject.name).GetShootDistance();
         maxUpAngle = enemyManager.GetWeapon(this.gameObject.name).GetMaxUpAngle();
         maxDownAngle = enemyManager.GetWeapon(this.gameObject.name).GetMaxDownAngle();
@@ -36,7 +36,14 @@ public class EnemyShoot : MonoBehaviour
             MoveSpeedBefore = playerObj.transform.position;
             TargetDistance = Vector3.Distance(this.transform.position, playerObj.transform.position);
             MoveSpeedAfter = MoveSpeedNow * TargetDistance / enemyManager.GetWeapon(this.gameObject.name).GetBulletSpeed() / Time.deltaTime + playerObj.transform.position;
-            transform.LookAt(MoveSpeedBefore);
+            if (IsLookAtBefore)
+            {
+                transform.LookAt(MoveSpeedBefore);
+            }
+            else
+            {
+                transform.LookAt(MoveSpeedAfter);
+            }
             AngleControl();
         }
     }
@@ -48,9 +55,6 @@ public class EnemyShoot : MonoBehaviour
             {
                 transform.LookAt(MoveSpeedAfter);
                 AngleControl();
-                AnglePlusX = Random.Range(-enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10, enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10);
-                AnglePlusY = Random.Range(-enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10, enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10);
-                transform.rotation = Quaternion.Euler(transform.localEulerAngles.x + AnglePlusX, transform.localEulerAngles.y + AnglePlusY, transform.localEulerAngles.z);
                 Child = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
                 Child.name = this.gameObject.name;
                 Child.transform.localScale = Vector3.one * enemyManager.GetWeapon(this.gameObject.name).GetBulletSize();
