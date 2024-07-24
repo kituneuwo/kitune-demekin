@@ -21,6 +21,7 @@ public class BulletScript_Enemy : MonoBehaviour
     private EnemyManager enemyManager;
     private float AnglePlusX;
     private float AnglePlusY;
+    private EnemyScript enemyScript;
     void Start()
     {
         AnglePlusX = Random.Range(-enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10, enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10);
@@ -52,6 +53,7 @@ public class BulletScript_Enemy : MonoBehaviour
         }
         else if(other.gameObject.layer == 6)
         {
+            enemyScript = other.gameObject.GetComponent<EnemyScript>();
             rb.useGravity = true;
             rb.velocity = new Vector3(0, 0, 0);
             rb.AddTorque(Random.value - 0.5f * torque, Random.value - 0.5f * torque, Random.value - 0.5f * torque, ForceMode.Acceleration);
@@ -62,8 +64,7 @@ public class BulletScript_Enemy : MonoBehaviour
             RandomNumber = Random.value - 0.5f;
             rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
             Invoke("DestroyBullet", DeathTime);
-            PlayerC_3D.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage() / 10;
-            Debug.Log(PlayerC_3D.PlayerLife);
+            enemyScript.EnemyLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
         }
 
     }

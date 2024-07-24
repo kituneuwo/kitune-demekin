@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     private Rigidbody rb;
-    private int Life;
+    private float Life;
+    public float EnemyLife { get; set; }
     [SerializeField]
     private EnemyManager enemyManager;
+    private bool IsDeathEnemy;
     [System.Serializable]
     private struct EnemyDeathP
     {
@@ -24,8 +26,17 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
+        IsDeathEnemy = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
+    }
+    private void Update()
+    {
+        if (Life <= 0 && !IsDeathEnemy)
+        {
+            IsDeathEnemy = true;
+            BreakChara();
+        }
     }
     void BreakChara()
     {
@@ -61,10 +72,6 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.layer == 7)
         {
             Life--;
-            if(Life <= 0)
-            {
-                BreakChara();
-            }
         }
     }
 }

@@ -16,5 +16,4 @@ MonoBehaviour:
   EnemyName: "\u6728\u7BB1"
   EnemyInformation: "\u305F\u3060\u306E\u6728\u7BB1\u3002\u3053\u308F\u308C\u308B"
   EnemyLife: 1
-  EnemyDamage: 0
   EnemySpeed: 0

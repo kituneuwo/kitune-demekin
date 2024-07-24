@@ -24,4 +24,4 @@ MonoBehaviour:
   ShotVolume: 3
   BulletAccuracy: 25
   ShootDistance: 50
-  IsLookAtBefore: 0
+  IsLookAtBefore: 1
