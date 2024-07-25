@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     public float EnemyLife { get; set; }
     [SerializeField]
     private EnemyManager enemyManager;
+    private bool IsDeath;
     [System.Serializable]
     private struct EnemyDeathP
     {
@@ -25,6 +26,7 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
+        IsDeath = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
     }
@@ -70,8 +72,9 @@ public class EnemyScript : MonoBehaviour
             Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage();
             Debug.Log(Life);
         }
-        if (Life <= 0)
+        if (Life <= 0 && !IsDeath)
         {
+            IsDeath = true;
             BreakChara();
         }
     }
