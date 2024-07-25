@@ -9,7 +9,6 @@ public class EnemyScript : MonoBehaviour
     public float EnemyLife { get; set; }
     [SerializeField]
     private EnemyManager enemyManager;
-    private bool IsDeathEnemy;
     [System.Serializable]
     private struct EnemyDeathP
     {
@@ -26,18 +25,10 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
-        IsDeathEnemy = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
     }
-    void Update()
-    {
-        if (Life <= 0 && !IsDeathEnemy)
-        {
-            IsDeathEnemy = true;
-            BreakChara();
-        }
-    }
+
     void BreakChara()
     {
         EnemyD.col.enabled = false;
@@ -73,6 +64,15 @@ public class EnemyScript : MonoBehaviour
         {
             Life--;
             Debug.Log(Life);
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
+        {
+            Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage();
+            Debug.Log(Life);
+        }
+        if (Life <= 0)
+        {
+            BreakChara();
         }
     }
 }

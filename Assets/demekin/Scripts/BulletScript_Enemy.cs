@@ -51,8 +51,6 @@ public class BulletScript_Enemy : MonoBehaviour
             PlayerC_3D.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
             Debug.Log(PlayerC_3D.PlayerLife);
         }
-        
-
     }
     void DestroyBullet()
     {
