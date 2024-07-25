@@ -51,21 +51,7 @@ public class BulletScript_Enemy : MonoBehaviour
             PlayerC_3D.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
             Debug.Log(PlayerC_3D.PlayerLife);
         }
-        else if(other.gameObject.layer == 6)
-        {
-            enemyScript = other.gameObject.GetComponent<EnemyScript>();
-            rb.useGravity = true;
-            rb.velocity = new Vector3(0, 0, 0);
-            rb.AddTorque(Random.value - 0.5f * torque, Random.value - 0.5f * torque, Random.value - 0.5f * torque, ForceMode.Acceleration);
-            RandomNumber = Random.value - 0.5f;
-            rb.AddForce(Vector3.forward * speed * power * RandomNumber, ForceMode.Acceleration);
-            RandomNumber = Random.value - 0.5f;
-            rb.AddForce(Vector3.right * speed * power * RandomNumber, ForceMode.Acceleration);
-            RandomNumber = Random.value - 0.5f;
-            rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
-            Invoke("DestroyBullet", DeathTime);
-            enemyScript.EnemyLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
-        }
+        
 
     }
     void DestroyBullet()

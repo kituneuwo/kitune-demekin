@@ -30,7 +30,7 @@ public class EnemyScript : MonoBehaviour
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
     }
-    private void Update()
+    void Update()
     {
         if (Life <= 0 && !IsDeathEnemy)
         {
@@ -69,9 +69,10 @@ public class EnemyScript : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 7)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             Life--;
+            Debug.Log(Life);
         }
     }
 }

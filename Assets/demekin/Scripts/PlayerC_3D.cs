@@ -96,6 +96,7 @@ public class PlayerC_3D : MonoBehaviour
         {
             PlayerD.Children[i].transform.DetachChildren();
         }
+        Destroy(PlayerD.Children[0]);
         for (int i = 0; i < PlayerD.DObject.Length; i++)
         {
             PlayerD.Childcol = PlayerD.DObject[i].GetComponent<BoxCollider>();
@@ -107,7 +108,7 @@ public class PlayerC_3D : MonoBehaviour
     }
     void DestroyPlayer()
     {
-        for (int i = 0; i < PlayerD.Children.Length; i++)
+        for (int i = 1; i < PlayerD.Children.Length; i++)
         {
             Destroy(PlayerD.Children[i]);
         }
