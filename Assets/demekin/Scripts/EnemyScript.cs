@@ -69,7 +69,7 @@ public class EnemyScript : MonoBehaviour
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
-            Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage();
+            Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage() / 10;
             Debug.Log(Life);
         }
         if (Life <= 0 && !IsDeath)
