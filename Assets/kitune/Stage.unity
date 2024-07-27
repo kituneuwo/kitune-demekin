@@ -987,6 +987,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tekiasyu
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c2fd2069e1d2b949b59bb017a606705,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24449,6 +24454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fuao
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a96c6f4dc76511478ca7177ef946190,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46053,6 +46063,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu+houdai-gatoringu
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a4c4dccd18b313c4ca498838309a5225,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48771,7 +48786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15608834, y: -0.000000008497743, z: 0.0000000013428578, w: 0.98774314}
+  m_LocalRotation: {x: 0.15608834, y: 0.000000008497743, z: -0.0000000013428578, w: 0.98774314}
   m_LocalPosition: {x: -0.84871674, y: 13.4, z: -1.7725487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -63006,6 +63021,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu+houdai-gatoringu3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90c9f13f116376d4fbc8d65126d9efb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68419,12 +68439,12 @@ PrefabInstance:
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000008497743
+      value: 0.000000008497743
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000013428578
+      value: -0.0000000013428578
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
@@ -72560,6 +72580,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu+houdai-gatoringu2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 796e4947d7141084c8c247a9f989a128,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76682,6 +76707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: akudo-fu+houdai-asyu
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b80eda9c3a6c5e4ea49cb0516dbd16a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92427,6 +92457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu+houdai-nirenhou2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 031c5f803de5fca4fac4a9adbbd039ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93293,6 +93328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu+houdai-nirenhou
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb1480f45a83d2149af0b52e67ce1031,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93553,6 +93593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: akudo-fu+houdai
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57dc9d0991a4b13439c8d63bdf7dbd72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99839,6 +99884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3fbbee7a8d7a33642862b784e4f07c49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -105308,6 +105358,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: akudo-fu+houdai-nirenhou3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c07f87eea73558f4e962f47a4efd9a93,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -109797,6 +109852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: akudo-fu+houdai-asyu2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30d2ef530ff102147827f9c6f5f3e368,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
