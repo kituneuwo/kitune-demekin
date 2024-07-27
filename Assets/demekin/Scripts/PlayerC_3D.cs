@@ -9,8 +9,6 @@ public class PlayerC_3D : MonoBehaviour
     [SerializeField]
     private GameObject EnemyObject;
     [SerializeField]
-    private GameObject BulletObject;
-    [SerializeField]
     private GameObject RotateObject;
     [SerializeField, Range(0f, 1f)]
     private float RotateSpeed;
@@ -56,10 +54,6 @@ public class PlayerC_3D : MonoBehaviour
         {
             transform.position += transform.forward * (Movespeed + PlusSpeed) * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
-        {
-            Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
         }
         if (Input.GetKey(KeyCode.I) && !IsDeath)
         {
