@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class mottainee2 : MonoBehaviour
@@ -8,13 +9,19 @@ public class mottainee2 : MonoBehaviour
     // Start is called before the first frame update
     public void OnClick()
     {
-
-        mottainee1.SetActive(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        StartCoroutine(DelayCoroutine());
+        
         
     }
+    private IEnumerator DelayCoroutine()
+    {
+        transform.position = Vector3.one;
+
+        // 3•bŠÔ‘Ò‚Â
+        yield return new WaitForSeconds(3);
+
+        this.transform.DOMove(new Vector3(357.5f, 201f, 0f), 2f);
+    }
+
+    
 }
