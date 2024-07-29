@@ -21,11 +21,14 @@ public class BulletScript_3D : MonoBehaviour
     [SerializeField]
     private float plus;
     private float RandomNumber;
+    private Vector3 PositionBefore;
+    private Vector3 PositionNow;
     void Start()
     {
+        PositionBefore = transform.position;
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
-        this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 90, transform.localEulerAngles.z);
+        Invoke("Look",0.02f);
         Invoke("DestroyBullet", LengthTime);
     }
     void OnCollisionEnter(Collision collision)
@@ -44,5 +47,12 @@ public class BulletScript_3D : MonoBehaviour
     void DestroyBullet()
     {
         Destroy(this.gameObject);
+    }
+    void Look()
+    {
+        PositionNow = transform.position - PositionBefore;
+        transform.rotation = Quaternion.LookRotation(PositionNow);
+        this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x + 90, transform.localEulerAngles.y, 0);
+        this.gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 }
