@@ -13,8 +13,5 @@ public class start1 : MonoBehaviour
         Time.timeScale = 1;
 
     }
-    public void Update()
-    {
-
-    }
+    
 }

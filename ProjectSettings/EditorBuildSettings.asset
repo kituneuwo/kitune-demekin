@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/kitune/kituneScene.unity
+    guid: 9e558585848321e439d659c073170fa6
+  - enabled: 1
+    path: Assets/kitune/StageScene.unity
+    guid: e85fddfa4aec57d4ab72fa8ed84ebc05
+  - enabled: 1
     path: Assets/kitune/Stage.unity
     guid: d60c32c36ab044a4a8754d0775c86841
   m_configObjects: {}
