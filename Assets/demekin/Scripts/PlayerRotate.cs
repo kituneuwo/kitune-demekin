@@ -46,11 +46,11 @@ public class NewPlayerRotate : MonoBehaviour
             {
                 RotateNum.x = transform.localEulerAngles.x + torque * Time.deltaTime;
             }
-            if (transform.localEulerAngles.x <= limitup && transform.localEulerAngles.x > limitup - 10)
+            if (transform.localEulerAngles.x <= limitup && transform.localEulerAngles.x > limitup - 30)
             {
                 RotateNum.x = limitup + 0.01f;
             }
-            if (transform.localEulerAngles.x >= limitdown && transform.localEulerAngles.x <= limitdown + 10)
+            if (transform.localEulerAngles.x >= limitdown && transform.localEulerAngles.x <= limitdown + 30)
             {
                 RotateNum.x = limitdown - 0.01f;
             }

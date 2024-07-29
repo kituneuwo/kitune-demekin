@@ -7,6 +7,8 @@ public class PlayerShoot : MonoBehaviour
     private bool IsDeath;
     [SerializeField]
     private GameObject BulletObject;
+    [SerializeField]
+    private GameObject TargetObject;
     void Start()
     {
         
@@ -17,9 +19,8 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
         {
-            GameObject obj = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -90));
-
-            
+            transform.LookAt(TargetObject.transform.position);
+            Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles));
         }
         if (!IsDeath && PlayerC_3D.PlayerLife <= 0)
         {
