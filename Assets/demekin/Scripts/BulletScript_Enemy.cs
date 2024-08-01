@@ -51,8 +51,8 @@ public class BulletScript_Enemy : MonoBehaviour
             RandomNumber = Random.value - 0.5f;
             rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
             Invoke("DestroyBullet", DeathTime);
-            PlayerC_3D.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
-            Debug.Log(PlayerC_3D.PlayerLife);
+            PlayerScript.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
+            Debug.Log(PlayerScript.PlayerLife);
         }
     }
     void DestroyBullet()

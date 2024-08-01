@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerC_3D : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     [SerializeField]
     private float Movespeed;
@@ -17,8 +17,13 @@ public class PlayerC_3D : MonoBehaviour
     private Rigidbody rb;
     public static int PlayerLife;
     private bool IsDeath;
-    private float Wheel;
+
     private float PlusSpeed;
+    private float PlayerSpeed;
+    public float playerSpeed
+    {
+        get { return PlayerSpeed; }
+    }
     [System.Serializable]
     private struct PlayerDeathP
     {
@@ -40,8 +45,7 @@ public class PlayerC_3D : MonoBehaviour
     }
     void Update()
     {
-        Wheel = Input.GetAxis("Mouse ScrollWheel") * 10;
-        PlusSpeed += Wheel;
+        PlusSpeed += Input.GetAxis("Mouse ScrollWheel") * 10;
         if(PlusSpeed > maxSpeed)
         {
             PlusSpeed = maxSpeed;
@@ -52,7 +56,8 @@ public class PlayerC_3D : MonoBehaviour
         }
         if (PlayerLife > 0 && !IsDeath)
         {
-            transform.position += transform.forward * (Movespeed + PlusSpeed) * Time.deltaTime;
+            PlayerSpeed = Movespeed + PlusSpeed;
+            transform.position += transform.forward * (PlayerSpeed) * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
         }
         if (Input.GetKey(KeyCode.I) && !IsDeath)
