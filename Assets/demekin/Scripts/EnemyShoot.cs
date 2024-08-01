@@ -51,7 +51,7 @@ public class EnemyShoot : MonoBehaviour
     {
         for(int i = 0; i < enemyManager.GetWeapon(this.gameObject.name).GetShotVolume(); i++)
         {
-            if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance && PlayerC_3D.PlayerLife > 0)
+            if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance && PlayerScript.PlayerLife > 0)
             {
                 transform.LookAt(MoveSpeedAfter);
                 AngleControl();

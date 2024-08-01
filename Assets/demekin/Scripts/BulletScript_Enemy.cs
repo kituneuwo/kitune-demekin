@@ -22,8 +22,10 @@ public class BulletScript_Enemy : MonoBehaviour
     private float AnglePlusX;
     private float AnglePlusY;
     private EnemyScript enemyScript;
+    private bool IsCreate;
     void Start()
     {
+        IsCreate = false;
         AnglePlusX = Random.Range(-enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10, enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10);
         AnglePlusY = Random.Range(-enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10, enemyManager.GetWeapon(this.gameObject.name).GetBulletAccuracy() / 10);
         transform.rotation = Quaternion.Euler(transform.localEulerAngles.x + AnglePlusX, transform.localEulerAngles.y + AnglePlusY, transform.localEulerAngles.z);
@@ -33,10 +35,11 @@ public class BulletScript_Enemy : MonoBehaviour
         rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
         this.gameObject.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 90, transform.localEulerAngles.z);
         Invoke("DestroyBullet", LengthTime);
+        IsCreate = true;
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 3)
+        if(other.gameObject.layer == 3 && IsCreate)
         {
             rb.useGravity = true;
             rb.velocity = new Vector3(0, 0, 0);
@@ -48,8 +51,8 @@ public class BulletScript_Enemy : MonoBehaviour
             RandomNumber = Random.value - 0.5f;
             rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
             Invoke("DestroyBullet", DeathTime);
-            PlayerC_3D.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
-            Debug.Log(PlayerC_3D.PlayerLife);
+            PlayerScript.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
+            Debug.Log(PlayerScript.PlayerLife);
         }
     }
     void DestroyBullet()

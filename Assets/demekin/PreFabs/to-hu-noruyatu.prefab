@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &337937137649553137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4612798740824618498}
+  m_Layer: 0
+  m_Name: TargetEase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4612798740824618498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337937137649553137}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6451857171348010474}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892609246990011953
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603213262152938142}
   - component: {fileID: 3261031107630533135}
-  - component: {fileID: 3685136478884135458}
+  - component: {fileID: 6528807007180164694}
   m_Layer: 0
   m_Name: ta-getto
   m_TagString: Untagged
@@ -549,7 +580,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3685136478884135458
+--- !u!114 &6528807007180164694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,10 +589,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2820263776247634759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae5a095125650946b5cffadd8bcf1c7, type: 3}
+  m_Script: {fileID: 11500000, guid: f7cdd31c599aa8e46988d487b32a0a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 3529550915833908551}
+  PlayerObject: {fileID: 3529550915833908551}
+  maxMove: 5
+  RotateSpeed: 0.1
+  SpeedControl: 0
+  YAngleControl: 0.375
+  YSpeedControl: 0
 --- !u!1 &2941690825545841197
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1025,7 @@ Transform:
   - {fileID: 5116517703974322093}
   - {fileID: 8460024059165846078}
   - {fileID: 603213262152938142}
+  - {fileID: 4612798740824618498}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2022025432458223321

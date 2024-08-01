@@ -35,10 +35,14 @@ public class EnemyScript : MonoBehaviour
     {
         EnemyD.col.enabled = false;
         EnemyD.Triggercol.enabled = false;
-        Invoke("DestroyChara", EnemyD.DeathTime);
+        for (int i = 0; i < EnemyD.DObject.Length; i++)
+        {
+            Destroy(EnemyD.DObject[i],EnemyD.DeathTime);
+        }
         for (int i = 0; i < EnemyD.Children.Length; i++)
         {
             EnemyD.Children[i].transform.DetachChildren();
+            Destroy(EnemyD.Children[i]);
         }
         for (int i = 0; i < EnemyD.DObject.Length; i++)
         {
@@ -47,17 +51,6 @@ public class EnemyScript : MonoBehaviour
             rb = EnemyD.DObject[i].GetComponent<Rigidbody>();
             rb.useGravity = true;
             rb.AddForce(Random.insideUnitSphere * EnemyD.Dpower, ForceMode.VelocityChange);
-        }
-    }
-    void DestroyChara()
-    {
-        for (int i = 0; i < EnemyD.Children.Length; i++)
-        {
-            Destroy(EnemyD.Children[i]);
-        }
-        for (int i = 0; i < EnemyD.DObject.Length; i++)
-        {
-            Destroy(EnemyD.DObject[i]);
         }
     }
     void OnTriggerEnter(Collider other)

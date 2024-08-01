@@ -15,13 +15,11 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
+        if (Input.GetKey(KeyCode.Space) && !IsDeath)
         {
-            GameObject obj = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -90));
-
-            
+            Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles));
         }
-        if (!IsDeath && PlayerC_3D.PlayerLife <= 0)
+        if (!IsDeath && PlayerScript.PlayerLife <= 0)
         {
             IsDeath = true;
         }
