@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
+   
     [SerializeField]
     private float Movespeed;
     [SerializeField]
@@ -77,6 +79,7 @@ public class PlayerScript : MonoBehaviour
         {
             IsDeath = true;
             BreakPlayer();
+
         }
     }
     void OnCollisionStay(Collision collision)
@@ -109,7 +112,10 @@ public class PlayerScript : MonoBehaviour
             rb.useGravity = true;
             rb.AddForce(Random.insideUnitSphere * PlayerD.Dpower, ForceMode.VelocityChange);
         }
+        
     }
+    
+    
     void DestroyPlayer()
     {
         for (int i = 1; i < PlayerD.Children.Length; i++)
@@ -120,5 +126,7 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(PlayerD.DObject[i]);
         }
+        
     }
+    
 }

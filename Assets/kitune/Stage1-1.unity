@@ -5970,7 +5970,6 @@ Transform:
   - {fileID: 2131054574}
   - {fileID: 941574249}
   - {fileID: 375445348}
-  - {fileID: 1868928111}
   - {fileID: 1774469892}
   - {fileID: 906531763}
   m_Father: {fileID: 0}
@@ -6591,6 +6590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sensya
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 951d8acb1a197ee4b8bbdfc73867cdda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8593,7 +8597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpenPosition: {x: 21, y: 5.5, z: 50}
-  doorOpenSpeed: 1
+  doorOpenSpeed: 0.05
 --- !u!1001 &379613911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27785,6 +27789,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sensya (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 951d8acb1a197ee4b8bbdfc73867cdda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1170823039745201779, guid: 951d8acb1a197ee4b8bbdfc73867cdda,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -40080,7 +40089,7 @@ CapsuleCollider:
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 0.31, z: -0.00000008940697}
 --- !u!23 &1868928109
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40140,11 +40149,11 @@ Transform:
   m_GameObject: {fileID: 1868928107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 49.255, y: -30.07589, z: 21.705559}
+  m_LocalPosition: {x: 30.600002, y: 14, z: 61}
   m_LocalScale: {x: 11, y: 10, z: 11}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 266907090}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1868928112
 MonoBehaviour:
@@ -40159,6 +40168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickObject: {fileID: 375445344}
+  x: 36
+  y: 14
+  z: 61
+  Speed: 2
 --- !u!1001 &1870038623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45585,3 +45598,4 @@ SceneRoots:
   - {fileID: 659145415}
   - {fileID: 733436270}
   - {fileID: 295462420}
+  - {fileID: 1868928111}

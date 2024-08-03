@@ -23744,6 +23744,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2022025432458223321, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
         type: 3}
+      propertyPath: SceneA
+      value: StageScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022025432458223321, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
+        type: 3}
       propertyPath: RotateObject
       value: 
       objectReference: {fileID: 1096049632}
@@ -72964,7 +72969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420793372}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18345653, y: -0.000000016914353, z: 0.0000000031566232, w: 0.9830278}
+  m_LocalRotation: {x: 0.18345653, y: 0.000000016914353, z: -0.0000000031566232, w: 0.9830278}
   m_LocalPosition: {x: 0, y: 2.510787, z: -5.024908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -105747,12 +105752,12 @@ PrefabInstance:
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016914353
+      value: 0.000000016914353
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000031566232
+      value: -0.0000000031566232
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
