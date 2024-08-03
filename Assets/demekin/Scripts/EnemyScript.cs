@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+   // [SerializeField] AudioClip Sound1;
+   // AudioSource audioSource;
+
     private Rigidbody rb;
     private float Life;
     public float EnemyLife { get; set; }
@@ -26,6 +29,7 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
+        //audioSource = GetComponent<AudioSource>();
         IsDeath = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
@@ -67,6 +71,7 @@ public class EnemyScript : MonoBehaviour
         }
         if (Life <= 0 && !IsDeath)
         {
+            //audioSource.PlayOneShot(Sound1);
             IsDeath = true;
             BreakChara();
         }
