@@ -1112,12 +1112,12 @@ PrefabInstance:
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000008331826
+      value: 0.00000000833183
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021437196
+      value: 0.0000000021437216
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
@@ -2663,8 +2663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063975344}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.58171386, y: -0.000000008331826, z: -0.0000000021437196,
-    w: 0.81339353}
+  m_LocalRotation: {x: 0.58171386, y: 0.00000000833183, z: 0.0000000021437216, w: 0.81339353}
   m_LocalPosition: {x: 0, y: 1005.7586, z: -0.940712}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3220,11 +3219,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
-        type: 3}
       propertyPath: SpeedControl
       value: 0
       objectReference: {fileID: 0}
@@ -3240,28 +3234,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
         type: 3}
-      propertyPath: maxMoveMValue
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
-        type: 3}
-      propertyPath: SpeedMultiplier
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
-        type: 3}
       propertyPath: SpeedXMultiplier
       value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
-        type: 3}
-      propertyPath: XAngleMultiplier
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528807007180164694, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
-        type: 3}
-      propertyPath: maxMoveMultiplier
-      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7402890449877094204, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527,
         type: 3}

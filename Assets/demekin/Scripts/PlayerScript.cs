@@ -84,12 +84,13 @@ public class PlayerScript : MonoBehaviour
         if(collision.gameObject.layer == 4)
         {
             PlayerLife--;
+            Debug.Log(PlayerLife);
         }
         if(collision.gameObject.layer != 9)
         {
             PlayerLife = 0;
+            Debug.Log(collision.gameObject.name);
         }
-        Debug.Log(PlayerLife);
     }
     void BreakPlayer()
     {
