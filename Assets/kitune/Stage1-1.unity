@@ -15592,11 +15592,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: mizu
       objectReference: {fileID: 0}
-    - target: {fileID: 5319450380257741017, guid: 12901b8b749aff5469361eb87520eb16,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
