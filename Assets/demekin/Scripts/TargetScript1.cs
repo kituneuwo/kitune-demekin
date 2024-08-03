@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class TargetScript : MonoBehaviour
+public class TargetScript1 : MonoBehaviour
 {
     [SerializeField]
     private GameObject PlayerObject;
