@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public AudioClip[] audios;
+    private AudioSource audioSource;
+    private int i;
     private bool IsDeath;
     [SerializeField]
     private GameObject BulletObject;
@@ -11,13 +14,20 @@ public class PlayerShoot : MonoBehaviour
     {
         
         IsDeath = false;
+
+        audioSource = this.GetComponent<AudioSource>();
+        if (audios != null)
+        {
+            i = Random.Range(0, audios.Length);
+        }
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && !IsDeath)
+        if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
         {
             Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles));
+            audioSource.PlayOneShot(audios[i]);
         }
         if (!IsDeath && PlayerScript.PlayerLife <= 0)
         {
