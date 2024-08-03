@@ -54,13 +54,16 @@ public class EnemyShoot : MonoBehaviour
     {
         for(int i = 0; i < enemyManager.GetWeapon(this.gameObject.name).GetShotVolume(); i++)
         {
-            if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance && PlayerScript.PlayerLife > 0)
+            if(playerObj != null)
             {
-                transform.LookAt(MoveSpeedAfter);
-                AngleControl();
-                Child = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
-                Child.name = this.gameObject.name;
-                Child.transform.localScale = Vector3.one * enemyManager.GetWeapon(this.gameObject.name).GetBulletSize();
+                if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance && PlayerScript.PlayerLife > 0)
+                {
+                    transform.LookAt(MoveSpeedAfter);
+                    AngleControl();
+                    Child = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
+                    Child.name = this.gameObject.name;
+                    Child.transform.localScale = Vector3.one * enemyManager.GetWeapon(this.gameObject.name).GetBulletSize();
+                }
             }
         }
 

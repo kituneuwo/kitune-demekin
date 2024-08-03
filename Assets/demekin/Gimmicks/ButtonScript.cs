@@ -7,22 +7,19 @@ public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject gimmickObject;
-    void Start()
+    private bool IsActivation;
+    private void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        IsActivation = false;
     }
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet") && !IsActivation)
         {
-            if(gimmickObject.tag == "Door")
+            if (gimmickObject.tag == "Door")
             {
                 gimmickObject.GetComponent<DoorScript>().Open();
+                IsActivation = true;
             }
         }
     }
