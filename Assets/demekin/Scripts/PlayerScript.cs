@@ -69,6 +69,10 @@ public class PlayerScript : MonoBehaviour
         {
             PlayerLife = 0;
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log(PlayerSpeed);
+        }
         if (PlayerLife <= 0 && !IsDeath)
         {
             IsDeath = true;

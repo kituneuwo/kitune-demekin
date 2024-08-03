@@ -30,21 +30,24 @@ public class EnemyShoot : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance)
+        if(playerObj != null)
         {
-            MoveSpeedNow = playerObj.transform.position - MoveSpeedBefore;
-            MoveSpeedBefore = playerObj.transform.position;
-            TargetDistance = Vector3.Distance(this.transform.position, playerObj.transform.position);
-            MoveSpeedAfter = MoveSpeedNow * TargetDistance / enemyManager.GetWeapon(this.gameObject.name).GetBulletSpeed() / Time.deltaTime + playerObj.transform.position;
-            if (IsLookAtBefore)
+            if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance)
             {
-                transform.LookAt(MoveSpeedBefore);
+                MoveSpeedNow = playerObj.transform.position - MoveSpeedBefore;
+                MoveSpeedBefore = playerObj.transform.position;
+                TargetDistance = Vector3.Distance(this.transform.position, playerObj.transform.position);
+                MoveSpeedAfter = MoveSpeedNow * TargetDistance / enemyManager.GetWeapon(this.gameObject.name).GetBulletSpeed() / Time.deltaTime + playerObj.transform.position;
+                if (IsLookAtBefore)
+                {
+                    transform.LookAt(MoveSpeedBefore);
+                }
+                else
+                {
+                    transform.LookAt(MoveSpeedAfter);
+                }
+                AngleControl();
             }
-            else
-            {
-                transform.LookAt(MoveSpeedAfter);
-            }
-            AngleControl();
         }
     }
     void Shoot()
