@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-   // [SerializeField] AudioClip Sound1;
-   // AudioSource audioSource;
+   [SerializeField] AudioClip Sound2;
+    AudioSource audioSource;
 
     private Rigidbody rb;
     private float Life;
@@ -29,7 +29,7 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         IsDeath = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
@@ -62,6 +62,7 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             Life--;
+            audioSource.PlayOneShot(Sound2);
             Debug.Log(Life);
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
