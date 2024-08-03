@@ -22,7 +22,7 @@ public class ButtonScript : MonoBehaviour
         {
             if(gimmickObject.tag == "Door")
             {
-
+                gimmickObject.GetComponent<DoorScript>().Open();
             }
         }
     }
