@@ -27,6 +27,9 @@ public class ButtonScript : MonoBehaviour
                 gimmickObject.GetComponent<DoorScript>().Open();
                 IsActivation = true;
             }
+
+            
+
         }
     }
 }
