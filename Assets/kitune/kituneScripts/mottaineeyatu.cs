@@ -6,16 +6,19 @@ using UnityEngine;
 public class mottaineeyatu : MonoBehaviour
 
 {
+    
     [SerializeField] private GameObject mottainee;
     // Start is called before the first frame update
+    void Start()
+    {
+      
+    }
     public void OnClick()
     {
+        
         mottainee.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
