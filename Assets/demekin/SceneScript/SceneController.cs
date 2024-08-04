@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SceneController : MonoBehaviour
 {
@@ -25,16 +26,16 @@ public class SceneController : MonoBehaviour
         fadeCanvas.GetComponent<FadeManager>().fadeIn();
     }
 
-    public async void SceneRestart()//ƒ{ƒ^ƒ“‘€ì‚È‚Ç‚ÅŒÄ‚Ño‚·
+    public async void SceneRestart()
     {
         fadeCanvas.GetComponent<FadeManager>().fadeOut();
-        await Task.Delay(200);
+        await Task.Delay(TimeSpan.FromSeconds(0.2));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public async void SceneBack()
     {
         fadeCanvas.GetComponent<FadeManager>().fadeOut();
-        await Task.Delay(200);
+        await Task.Delay(TimeSpan.FromSeconds(0.2));
         SceneManager.LoadScene("StageScene");
     }
     public void SceneEnd()
