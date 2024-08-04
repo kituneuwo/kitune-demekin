@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7953,9 +7953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickObject: {fileID: 375445344}
-  x: 62.5
-  y: 34.7
-  z: 155
+  PushPosition: {x: 60.5, y: 34.7, z: 155}
   Speed: 2
 --- !u!136 &312339953
 CapsuleCollider:
@@ -9355,7 +9353,7 @@ Transform:
   m_GameObject: {fileID: 375445344}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21, y: -20, z: 50}
+  m_LocalPosition: {x: 20.654999, y: -20.07589, z: 50.70556}
   m_LocalScale: {x: 40, y: 25, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9373,8 +9371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a0d56bf9ebcdf4f94b2e247c6e8f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpenPosition: {x: 21, y: 5.5, z: 50}
-  doorOpenSpeed: 0.05
+  doorOpenPosition: {x: 2, y: 49, z: 90}
+  doorOpenSpeed: 2
 --- !u!1001 &379613911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46663,7 +46661,7 @@ Transform:
   m_GameObject: {fileID: 1868928107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 30.600002, y: 14, z: 61}
+  m_LocalPosition: {x: 30, y: 14, z: 61}
   m_LocalScale: {x: 11, y: 10, z: 11}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46682,9 +46680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickObject: {fileID: 375445344}
-  x: 36
-  y: 14
-  z: 61
+  PushPosition: {x: 33.5, y: 14, z: 61}
   Speed: 2
 --- !u!1001 &1870038623
 PrefabInstance:
