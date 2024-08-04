@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Door
   - Hinge
+  - Fade
   layers:
   - Default
   - TransparentFX

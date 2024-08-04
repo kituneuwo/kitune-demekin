@@ -7,10 +7,8 @@ public class DoorScript : MonoBehaviour
 {
     [SerializeField]
     private Vector3 doorOpenPosition;
-    [SerializeField]
-    private float doorOpenSpeed;
-    public void Open()
+    public void Open(float Time)
     {
-        transform.DOMove(new Vector3(doorOpenPosition.x, doorOpenPosition.y, doorOpenPosition.z),doorOpenSpeed);
+        transform.DOMove(new Vector3(doorOpenPosition.x, doorOpenPosition.y, doorOpenPosition.z),Time).SetEase(Ease.OutSine);
     }
 }

@@ -8076,7 +8076,7 @@ MonoBehaviour:
   - {fileID: 1903138713}
   - {fileID: 118249153}
   PushPosition: {x: 61, y: 34.7, z: 155}
-  Speed: 1
+  Time: 7.5
 --- !u!136 &312339953
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9494,7 +9494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpenPosition: {x: 2, y: 49, z: 90}
-  doorOpenSpeed: 2
 --- !u!1001 &379613911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46765,7 +46764,7 @@ MonoBehaviour:
   gimmickObject:
   - {fileID: 375445344}
   PushPosition: {x: 33.5, y: 14, z: 61}
-  Speed: 1
+  Time: 3
 --- !u!1001 &1870038623
 PrefabInstance:
   m_ObjectHideFlags: 0
