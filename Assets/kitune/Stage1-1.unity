@@ -8058,7 +8058,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickObject:
-  - {fileID: 0}
+  - {fileID: 1833923587}
+  - {fileID: 220223212}
   PushPosition: {x: 60.5, y: 34.7, z: 155}
   Speed: 2
 --- !u!136 &312339953
