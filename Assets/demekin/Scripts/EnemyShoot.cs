@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
+    [SerializeField] AudioClip Sound1;
+    private AudioSource audioSource;
     [SerializeField]
     private GameObject playerObj;
     private bool IsLookAtBefore;
@@ -21,6 +23,7 @@ public class EnemyShoot : MonoBehaviour
     private int maxDownAngle;
     void Start()
     {
+        audioSource = this.GetComponent<AudioSource>();
         IsLookAtBefore = enemyManager.GetWeapon(this.gameObject.name).GetIsLookAtBefore();
         shootDistance = enemyManager.GetWeapon(this.gameObject.name).GetShootDistance();
         maxUpAngle = enemyManager.GetWeapon(this.gameObject.name).GetMaxUpAngle();
@@ -52,11 +55,12 @@ public class EnemyShoot : MonoBehaviour
     }
     void Shoot()
     {
-        for(int i = 0; i < enemyManager.GetWeapon(this.gameObject.name).GetShotVolume(); i++)
+        if (playerObj != null)
         {
-            if(playerObj != null)
+            if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance && PlayerScript.PlayerLife > 0)
             {
-                if (Vector3.Distance(this.transform.position, playerObj.transform.position) < shootDistance && PlayerScript.PlayerLife > 0)
+                audioSource.PlayOneShot(Sound1);
+                for (int i = 0; i < enemyManager.GetWeapon(this.gameObject.name).GetShotVolume(); i++)
                 {
                     transform.LookAt(MoveSpeedAfter);
                     AngleControl();
