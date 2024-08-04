@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
 
     private float PlusSpeed;
     private float PlayerSpeed;
+    private SceneController sceneController;
     public float playerSpeed
     {
         get { return PlayerSpeed; }
@@ -41,6 +42,7 @@ public class PlayerScript : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        sceneController = this.gameObject.GetComponent<SceneController>();
         IsDeath = false;
         PlayerLife = 200;
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -100,6 +102,7 @@ public class PlayerScript : MonoBehaviour
     {
         PlayerD.col.enabled = false;
         Invoke("DestroyPlayer", PlayerD.DeathTime);
+        SceneEnd();
         for (int i = 0; i < PlayerD.Children.Length; i++)
         {
             PlayerD.Children[i].transform.DetachChildren();
@@ -127,7 +130,10 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(PlayerD.DObject[i]);
         }
-        
+    }
+    void SceneEnd()
+    {
+        sceneController.SceneEnd();
     }
     
 }
