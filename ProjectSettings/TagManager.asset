@@ -7,7 +7,6 @@ TagManager:
   - Enemy
   - Bullet
   - Door
-  - Hinge
   layers:
   - Default
   - TransparentFX
