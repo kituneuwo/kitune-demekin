@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4032,6 +4032,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c854c72347a6b6d4c93aff4da565bac6,
     type: 3}
   m_PrefabInstance: {fileID: 174506570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &176346483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3684854978179391942, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1774469891}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &186189523
 PrefabInstance:
@@ -34634,6 +34640,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1414513999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1417554569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4489173751587888770, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1774469891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1420616889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44301,6 +44319,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6394492051839995402, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
+        type: 3}
+      propertyPath: HPUI
+      value: 
+      objectReference: {fileID: 176346483}
+    - target: {fileID: 6394492051839995402, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
+        type: 3}
+      propertyPath: Sound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cd9cfdcbd9d07347a8206e8dede1094, type: 3}
+    - target: {fileID: 6394492051839995402, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 1417554569}
     - target: {fileID: 6597753922639709422, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
         type: 3}
       propertyPath: Sound1
