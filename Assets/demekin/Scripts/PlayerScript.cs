@@ -102,6 +102,7 @@ public class PlayerScript : MonoBehaviour
     {
         PlayerD.col.enabled = false;
         Invoke("DestroyPlayer", PlayerD.DeathTime);
+        SceneEnd();
         for (int i = 0; i < PlayerD.Children.Length; i++)
         {
             PlayerD.Children[i].transform.DetachChildren();
@@ -129,6 +130,9 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(PlayerD.DObject[i]);
         }
+    }
+    void SceneEnd()
+    {
         sceneController.SceneEnd();
     }
     

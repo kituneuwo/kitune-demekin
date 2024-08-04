@@ -10,11 +10,17 @@ public class FadeManager : MonoBehaviour
     private bool isFadeIn = false;
     private bool isFadeOut = false;
     private bool isSceneEnd = false;
+    [SerializeField]
+    private GameObject Button1;
+    [SerializeField]
+    private GameObject Button2;
 
     private float alpha = 0.0f;
     private float fadeSpeed = 0.2f;
     void Start()
     {
+        Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         if (!isFadeInstance)
         {
             DontDestroyOnLoad(this);
@@ -55,6 +61,8 @@ public class FadeManager : MonoBehaviour
             {
                 isSceneEnd = false;
                 alpha = 0.3f;
+                Button1.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                Button2.GetComponent<Image>().color = new Color(255, 255, 255, 1);
             }
             this.GetComponentInChildren<Image>().color = new Color(0.0f, 0.0f, 0.0f, alpha);
         }
@@ -64,6 +72,8 @@ public class FadeManager : MonoBehaviour
     {
         isFadeIn = true;
         isFadeOut = false;
+        Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
     }
 
     public void fadeOut()

@@ -35,7 +35,10 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
-        slider.value = 1;
+        if(slider != null)
+        {
+            slider.value = 1;
+        }
         Life = maxLife;
         audioSource = GetComponent<AudioSource>();
         IsDeath = false;
@@ -73,7 +76,10 @@ public class EnemyScript : MonoBehaviour
             Life--;
             audioSource.PlayOneShot(Sound2);
             Debug.Log(Life);
-            slider.value = (float)Life / (float)maxLife;
+            if(slider != null)
+            {
+                slider.value = (float)Life / (float)maxLife;
+            }
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
