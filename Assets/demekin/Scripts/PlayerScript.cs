@@ -44,6 +44,7 @@ public class PlayerScript : MonoBehaviour
         IsDeath = false;
         PlayerLife = 200;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        PlusSpeed = -Movespeed;
     }
     void Update()
     {

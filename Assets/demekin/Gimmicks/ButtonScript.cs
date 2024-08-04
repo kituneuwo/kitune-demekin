@@ -8,9 +8,8 @@ public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject gimmickObject;
-    [SerializeField] private float x;
-    [SerializeField] private float y;
-    [SerializeField] private float z;
+    [SerializeField]
+    private Vector3 PushPosition;
     [SerializeField] private float Speed;
     private bool IsActivation;
     private void Start()
@@ -21,15 +20,12 @@ public class ButtonScript : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet") && !IsActivation)
         {
-            this.transform.DOMove(new Vector3(x, y, z), Speed);
+            this.transform.DOMove(PushPosition, Speed);
             if (gimmickObject.tag == "Door")
             {
                 gimmickObject.GetComponent<DoorScript>().Open();
                 IsActivation = true;
             }
-
-            
-
         }
     }
 }
