@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
-   [SerializeField] AudioClip Sound2;
+    [SerializeField] AudioClip Sound1;
+    [SerializeField] AudioClip Sound2;
     AudioSource audioSource;
+
+    [SerializeField] private GameObject HPUI;
+    public Slider slider;
 
     private Rigidbody rb;
     private float Life;
+    float maxLife;
     public float EnemyLife { get; set; }
     [SerializeField]
     private EnemyManager enemyManager;
@@ -29,9 +35,12 @@ public class EnemyScript : MonoBehaviour
     private EnemyDeathP EnemyD;
     void Start()
     {
+        slider.value = 1;
+        Life = maxLife;
         audioSource = GetComponent<AudioSource>();
         IsDeath = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
+        maxLife = Life;
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
     }
 
@@ -64,6 +73,7 @@ public class EnemyScript : MonoBehaviour
             Life--;
             audioSource.PlayOneShot(Sound2);
             Debug.Log(Life);
+            slider.value = (float)Life / (float)maxLife;
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
@@ -72,7 +82,8 @@ public class EnemyScript : MonoBehaviour
         }
         if (Life <= 0 && !IsDeath)
         {
-            //audioSource.PlayOneShot(Sound1);
+            HPUI.SetActive(false);
+            audioSource.PlayOneShot(Sound1);
             IsDeath = true;
             BreakChara();
         }
