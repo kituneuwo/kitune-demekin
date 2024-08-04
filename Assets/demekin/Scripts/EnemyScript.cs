@@ -88,7 +88,10 @@ public class EnemyScript : MonoBehaviour
         }
         if (Life <= 0 && !IsDeath)
         {
-            HPUI.SetActive(false);
+            if(HPUI != null)
+            {
+                HPUI.SetActive(false);
+            }
             audioSource.PlayOneShot(Sound1);
             IsDeath = true;
             BreakChara();
