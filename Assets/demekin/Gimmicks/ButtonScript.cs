@@ -7,7 +7,7 @@ using DG.Tweening;
 public class ButtonScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject gimmickObject;
+    private GameObject[] gimmickObject;
     [SerializeField]
     private Vector3 PushPosition;
     [SerializeField] private float Speed;
@@ -20,11 +20,18 @@ public class ButtonScript : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet") && !IsActivation)
         {
-            this.transform.DOMove(PushPosition, Speed);
-            if (gimmickObject.tag == "Door")
+            transform.DOMove(PushPosition, Speed).SetEase(Ease.Linear);
+            IsActivation = true;
+            for (int i = 0; i < gimmickObject.Length; i++)
             {
-                gimmickObject.GetComponent<DoorScript>().Open();
-                IsActivation = true;
+                if (gimmickObject[i].tag == "Door")
+                {
+                    gimmickObject[i].GetComponent<DoorScript>().Open();
+                }
+                if (gimmickObject[i].tag == "Hinge")
+                {
+                    gimmickObject[i].GetComponent<TurnScript>().Turn();
+                }
             }
         }
     }
