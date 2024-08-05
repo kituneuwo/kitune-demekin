@@ -8072,11 +8072,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd30198964953640b6d77e7052ba2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sound1: {fileID: 0}
   gimmickObject:
   - {fileID: 1903138713}
   - {fileID: 118249153}
   PushPosition: {x: 61, y: 34.7, z: 155}
-  Time: 7.5
+  _time: 0
+  rendererComponent: {fileID: 312339954}
+  Changecolor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!136 &312339953
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -44280,6 +44283,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266907090}
     m_Modifications:
+    - target: {fileID: 120988891481588212, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1220749872618335260, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46792,10 +46800,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd30198964953640b6d77e7052ba2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sound1: {fileID: 0}
   gimmickObject:
   - {fileID: 375445344}
   PushPosition: {x: 33.5, y: 14, z: 61}
-  Time: 3
+  _time: 0
+  rendererComponent: {fileID: 1868928109}
+  Changecolor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1870038623
 PrefabInstance:
   m_ObjectHideFlags: 0
