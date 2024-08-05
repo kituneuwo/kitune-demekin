@@ -1048,7 +1048,7 @@ GameObject:
   - component: {fileID: 7402890449877094204}
   - component: {fileID: 5463594839577474247}
   - component: {fileID: 7007769731577993666}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: to-hu-noruyatu
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1089,6 +1089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e3f610b43bfac429ee4a794079e6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPUI: {fileID: 0}
+  slider: {fileID: 0}
   Movespeed: 15
   EnemyObject: {fileID: 7059961865653634665, guid: 16c1865ad5158ab4cb1a6b7ec1e2c8b4,
     type: 3}

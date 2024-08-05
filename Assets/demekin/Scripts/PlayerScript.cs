@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private GameObject HPUI;
-    public Slider slider;
-    int maxLife;
+    [SerializeField]
+    private Slider slider;
+    private int maxLife;
     [SerializeField]
     private float Movespeed;
     [SerializeField]
@@ -45,6 +46,10 @@ public class PlayerScript : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        maxLife = 200;
+        if(slider != null){
+            slider.value = 1;
+        }
         PlayerLife = maxLife;
         sceneController = this.gameObject.GetComponent<SceneController>();
         IsDeath = false;
@@ -86,7 +91,10 @@ public class PlayerScript : MonoBehaviour
         {
             IsDeath = true;
             BreakPlayer();
-
+        }
+        if (slider != null)
+        {
+            slider.value = PlayerLife / maxLife;
         }
     }
     void OnCollisionStay(Collision collision)

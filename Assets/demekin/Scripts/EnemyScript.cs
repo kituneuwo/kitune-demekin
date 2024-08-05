@@ -10,7 +10,8 @@ public class EnemyScript : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField] private GameObject HPUI;
-    public Slider slider;
+    [SerializeField]
+    private Slider slider;
 
     private Rigidbody rb;
     private float Life;
@@ -78,7 +79,7 @@ public class EnemyScript : MonoBehaviour
             Debug.Log(Life);
             if(slider != null)
             {
-                slider.value = (float)Life / (float)maxLife;
+                slider.value = Life / maxLife;
             }
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
