@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private GameObject HPUI;
     [SerializeField]
     private Slider slider;
-    private int maxLife;
+    private float maxLife;
     [SerializeField]
     private float Movespeed;
     [SerializeField]
@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private float maxSpeed;
     private Rigidbody rb;
-    public static int PlayerLife;
+    public static float PlayerLife;
     private bool IsDeath;
 
     private float PlusSpeed;
@@ -46,14 +46,13 @@ public class PlayerScript : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
-        maxLife = 200;
+        IsDeath = false;
+        PlayerLife = 200;
+        maxLife = PlayerLife;
         if(slider != null){
             slider.value = 1;
         }
-        PlayerLife = maxLife;
         sceneController = this.gameObject.GetComponent<SceneController>();
-        IsDeath = false;
-        PlayerLife = 200;
         rb = this.gameObject.GetComponent<Rigidbody>();
         PlusSpeed = -Movespeed;
     }
@@ -91,6 +90,10 @@ public class PlayerScript : MonoBehaviour
         {
             IsDeath = true;
             BreakPlayer();
+            if (HPUI != null)
+            {
+                HPUI.SetActive(false);
+            }
         }
         if (slider != null)
         {
@@ -99,11 +102,6 @@ public class PlayerScript : MonoBehaviour
     }
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Water"))
-        {
-            PlayerLife--;
-            Debug.Log(PlayerLife);
-        }
         if(collision.gameObject.layer != LayerMask.NameToLayer("EnemyBullet"))
         {
             PlayerLife = 0;

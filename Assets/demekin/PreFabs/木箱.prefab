@@ -4631,7 +4631,7 @@ GameObject:
   - component: {fileID: 6850728571148652372}
   - component: {fileID: 2488338759793892846}
   - component: {fileID: 1816049930252919677}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: "\u6728\u7BB1"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4692,7 +4692,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fd6aa5de541746853a6993b908a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sound1: {fileID: 0}
   Sound2: {fileID: 8300000, guid: 1cd9cfdcbd9d07347a8206e8dede1094, type: 3}
+  HPUI: {fileID: 0}
+  slider: {fileID: 0}
   enemyManager: {fileID: 6850728571148652372}
   EnemyD:
     Dpower: 4

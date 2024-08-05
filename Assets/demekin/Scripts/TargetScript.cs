@@ -14,6 +14,8 @@ public class TargetScript : MonoBehaviour
     private float pointControl;
     private RaycastHit _hit;
     private int _layerMask;
+    [SerializeField]
+    private float _size;
     void Start()
     {
         _ray = new Ray(playerObject.transform.position,playerObject.transform.eulerAngles);
@@ -26,13 +28,15 @@ public class TargetScript : MonoBehaviour
         {
             if (Physics.Raycast(playerObject.transform.position, playerObject.transform.forward, out _hit, maxDistance, _layerMask))
             {
-                transform.position = _hit.point;
+                transform.position = _hit.point + (_hit.normal * 0.02f);
                 transform.rotation = Quaternion.LookRotation(_hit.normal);
+                transform.localScale = Vector3.one * _hit.distance / _size;
             }
             else
             {
                 transform.localPosition = new Vector3(0, 0, 10);
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.localScale = Vector3.one;
             }
             Debug.DrawRay(playerObject.transform.position, playerObject.transform.forward * maxDistance, Color.red);
         }

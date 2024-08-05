@@ -39,7 +39,7 @@ public class BulletScript_Enemy : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Player") && IsCreate)
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Default") && IsCreate && rb != null)
         {
             rb.useGravity = true;
             rb.velocity = new Vector3(0, 0, 0);
@@ -51,8 +51,11 @@ public class BulletScript_Enemy : MonoBehaviour
             RandomNumber = Random.value - 0.5f;
             rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
             Invoke("DestroyBullet", DeathTime);
-            PlayerScript.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
-            Debug.Log(PlayerScript.PlayerLife);
+            if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                PlayerScript.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
+                //Debug.Log(PlayerScript.PlayerLife);
+            }
         }
     }
     void DestroyBullet()
