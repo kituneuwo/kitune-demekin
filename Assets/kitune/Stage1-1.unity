@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6131,7 +6131,7 @@ GameObject:
   - component: {fileID: 251450722}
   - component: {fileID: 251450721}
   - component: {fileID: 251450720}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7947,7 +7947,7 @@ GameObject:
   - component: {fileID: 307616445}
   - component: {fileID: 307616444}
   - component: {fileID: 307616443}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8072,14 +8072,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd30198964953640b6d77e7052ba2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sound1: {fileID: 0}
   gimmickObject:
   - {fileID: 1903138713}
   - {fileID: 118249153}
   PushPosition: {x: 61, y: 34.7, z: 155}
-  _time: 0
+  _time: 8
   rendererComponent: {fileID: 312339954}
-  Changecolor: {r: 0, g: 0, b: 0, a: 0}
+  Changecolor: {r: 0, g: 1, b: 0.39215687, a: 1}
 --- !u!136 &312339953
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14827,7 +14826,7 @@ GameObject:
   - component: {fileID: 579666779}
   - component: {fileID: 579666778}
   - component: {fileID: 579666777}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17458,7 +17457,7 @@ GameObject:
   - component: {fileID: 716763374}
   - component: {fileID: 716763373}
   - component: {fileID: 716763372}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19685,7 +19684,7 @@ GameObject:
   - component: {fileID: 801850211}
   - component: {fileID: 801850210}
   - component: {fileID: 801850209}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23294,7 +23293,7 @@ GameObject:
   - component: {fileID: 999778912}
   - component: {fileID: 999778911}
   - component: {fileID: 999778910}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26787,12 +26786,12 @@ PrefabInstance:
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016914353
+      value: -0.000000016914353
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000031566232
+      value: 0.0000000031566232
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
@@ -28358,7 +28357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185505389}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18345653, y: 0.000000016914353, z: -0.0000000031566232, w: 0.9830278}
+  m_LocalRotation: {x: 0.18345653, y: -0.000000016914353, z: 0.0000000031566232, w: 0.9830278}
   m_LocalPosition: {x: 0, y: 2.510787, z: -5.024908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31225,7 +31224,7 @@ GameObject:
   - component: {fileID: 1293795416}
   - component: {fileID: 1293795415}
   - component: {fileID: 1293795414}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34455,7 +34454,7 @@ GameObject:
   - component: {fileID: 1411613756}
   - component: {fileID: 1411613755}
   - component: {fileID: 1411613754}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34999,7 +34998,7 @@ GameObject:
   - component: {fileID: 1422285772}
   - component: {fileID: 1422285771}
   - component: {fileID: 1422285770}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35282,7 +35281,7 @@ GameObject:
   - component: {fileID: 1444117089}
   - component: {fileID: 1444117088}
   - component: {fileID: 1444117087}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35743,7 +35742,7 @@ GameObject:
   - component: {fileID: 1455810505}
   - component: {fileID: 1455810504}
   - component: {fileID: 1455810503}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37510,7 +37509,7 @@ GameObject:
   - component: {fileID: 1513156015}
   - component: {fileID: 1513156014}
   - component: {fileID: 1513156013}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: kabe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44283,11 +44282,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266907090}
     m_Modifications:
-    - target: {fileID: 120988891481588212, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1220749872618335260, guid: 8094e9efa83d23b43b2c5d7c74c264c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46800,13 +46794,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd30198964953640b6d77e7052ba2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sound1: {fileID: 0}
   gimmickObject:
   - {fileID: 375445344}
   PushPosition: {x: 33.5, y: 14, z: 61}
-  _time: 0
+  _time: 3
   rendererComponent: {fileID: 1868928109}
-  Changecolor: {r: 0, g: 0, b: 0, a: 0}
+  Changecolor: {r: 0, g: 1, b: 0.39215687, a: 1}
 --- !u!1001 &1870038623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47952,7 +47945,7 @@ GameObject:
   - component: {fileID: 1937076887}
   - component: {fileID: 1937076886}
   - component: {fileID: 1937076885}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
