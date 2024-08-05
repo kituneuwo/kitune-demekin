@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button1: {fileID: 5728942657997678878}
   Button2: {fileID: 8538316471068255595}
+  fadeSpeed: 1
 --- !u!1 &5728942657997678878
 GameObject:
   m_ObjectHideFlags: 0

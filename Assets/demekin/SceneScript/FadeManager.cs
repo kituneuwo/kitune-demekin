@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;//’Ç‰Á
 
 public class FadeManager : MonoBehaviour
@@ -16,7 +17,8 @@ public class FadeManager : MonoBehaviour
     private GameObject Button2;
 
     private float alpha = 0.0f;
-    private float fadeSpeed = 0.2f;
+    [SerializeField]
+    private float fadeSpeed;
     void Start()
     {
         Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
@@ -30,6 +32,7 @@ public class FadeManager : MonoBehaviour
         {
             Destroy(this);
         }
+        SceneManager.activeSceneChanged += ActiveSceneChanged;
     }
 
     void Update()
@@ -57,10 +60,10 @@ public class FadeManager : MonoBehaviour
         else if (isSceneEnd)
         {
             alpha += Time.deltaTime / fadeSpeed;
-            if (alpha >= 0.3f)
+            if (alpha >= 0.8f)
             {
                 isSceneEnd = false;
-                alpha = 0.3f;
+                alpha = 0.8f;
                 Button1.GetComponent<Image>().color = new Color(255, 255, 255, 1);
                 Button2.GetComponent<Image>().color = new Color(255, 255, 255, 1);
             }
@@ -80,9 +83,16 @@ public class FadeManager : MonoBehaviour
     {
         isFadeOut = true;
         isFadeIn = false;
+        Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
     }
     public void HalfFadeOut()
     {
         isSceneEnd = true;
+    }
+    void ActiveSceneChanged(Scene thisScene, Scene nextScene)
+    {
+        Invoke("FadeIn", 0.5f);
+        Debug.Log(nextScene);
     }
 }
