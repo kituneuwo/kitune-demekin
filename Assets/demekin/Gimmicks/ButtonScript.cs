@@ -6,6 +6,8 @@ using DG.Tweening;
 
 public class ButtonScript : MonoBehaviour
 {
+    [SerializeField] AudioClip Sound1;
+    private AudioSource audioSource;
     [SerializeField]
     private GameObject[] gimmickObject;
     [SerializeField]
@@ -18,12 +20,14 @@ public class ButtonScript : MonoBehaviour
     private Color Changecolor;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         IsActivation = false;
     }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet") && !IsActivation)
         {
+            audioSource.PlayOneShot(Sound1);
             this.rendererComponent.material.DOColor(Changecolor, _time).SetEase(Ease.OutCubic);
             transform.DOMove(PushPosition, _time).SetEase(Ease.Linear);
             IsActivation = true;
