@@ -39,7 +39,7 @@ public class BulletScript_Enemy : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 3 && IsCreate)
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player") && IsCreate)
         {
             rb.useGravity = true;
             rb.velocity = new Vector3(0, 0, 0);

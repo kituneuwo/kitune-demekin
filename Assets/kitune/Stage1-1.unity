@@ -1251,7 +1251,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 337937137649553137, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3c5420dc6ba4c4b96d8f3c92e0f527, type: 3}
@@ -8047,6 +8048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd30198964953640b6d77e7052ba2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sound1: {fileID: 0}
   gimmickObject:
   - {fileID: 1903138713}
   - {fileID: 118249153}
@@ -46769,6 +46771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd30198964953640b6d77e7052ba2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sound1: {fileID: 0}
   gimmickObject:
   - {fileID: 375445344}
   PushPosition: {x: 33.5, y: 14, z: 61}

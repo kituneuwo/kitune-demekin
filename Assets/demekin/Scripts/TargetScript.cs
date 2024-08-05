@@ -1,63 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class TargetScript : MonoBehaviour
 {
+    Ray _ray;
     [SerializeField]
-    private GameObject PlayerObject;
-    //[SerializeField,Range(0f,10f)]
-    private float maxMove;
-    [SerializeField, Range(0f, 1f)]
-    private float RotateSpeed;
-    private PlayerScript playerScript;
-    //[SerializeField]
-    private float XAngleControl;
-    private float maxMoveValue;
-    private float XAngleControlValue;
-    private float Angle;
+    private GameObject playerObject;
     [SerializeField]
-    private float maxMoveMultiplier;
+    private float maxDistance;
     [SerializeField]
-    private float maxMoveMValue;
-    [SerializeField]
-    private float XAngleMultiplier;
-    [SerializeField]
-    private float SpeedMultiplier;
+    private float pointControl;
+    private RaycastHit _hit;
+    private int _layerMask;
     void Start()
     {
-       playerScript = PlayerObject.GetComponent<PlayerScript>();
+        _ray = new Ray(playerObject.transform.position,playerObject.transform.eulerAngles);
+        _layerMask = LayerMask.GetMask(new string[] { "Default", "Water", "Enemy" });
     }
 
     void Update()
     {
-        if(PlayerObject != null)
+        if(playerObject != null)
         {
-            Angle = -360 + PlayerObject.transform.eulerAngles.x;
-            maxMoveValue = -Angle * maxMoveMultiplier / 60 + maxMoveMValue;
-            if (Angle <= 0 && Angle >= -180)
+            if (Physics.Raycast(playerObject.transform.position, playerObject.transform.forward, out _hit, maxDistance, _layerMask))
             {
-                XAngleControl = transform.eulerAngles.x * XAngleMultiplier / 60 - 1.2f ;
-                maxMove = playerScript.playerSpeed * 0.05f + maxMoveValue;
-            }
-            if (Input.GetKey(KeyCode.E))
-            {
-                Debug.Log(maxMove);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(maxMove, XAngleControl, 10), RotateSpeed);
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(-maxMove,XAngleControl, 10), RotateSpeed);
+                transform.position = _hit.point;
+                transform.rotation = Quaternion.LookRotation(_hit.normal);
             }
             else
             {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(0, 0, 10), RotateSpeed);
+                transform.localPosition = new Vector3(0, 0, 10);
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
-            transform.LookAt(PlayerObject.transform.position);
+            Debug.DrawRay(playerObject.transform.position, playerObject.transform.forward * maxDistance, Color.red);
         }
     }
 }

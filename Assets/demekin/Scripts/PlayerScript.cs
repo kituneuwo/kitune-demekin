@@ -87,12 +87,12 @@ public class PlayerScript : MonoBehaviour
     }
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == 4)
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             PlayerLife--;
             Debug.Log(PlayerLife);
         }
-        if(collision.gameObject.layer != 9)
+        if(collision.gameObject.layer != LayerMask.NameToLayer("EnemyBullet"))
         {
             PlayerLife = 0;
             Debug.Log(collision.gameObject.name);
