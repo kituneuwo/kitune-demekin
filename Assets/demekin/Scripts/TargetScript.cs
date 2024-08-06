@@ -19,7 +19,7 @@ public class TargetScript : MonoBehaviour
     void Start()
     {
         _ray = new Ray(playerObject.transform.position,playerObject.transform.eulerAngles);
-        _layerMask = LayerMask.GetMask(new string[] { "Default", "Water", "Enemy" });
+        _layerMask = LayerMask.GetMask(new string[] { "Default",  "Enemy" });
     }
 
     void Update()

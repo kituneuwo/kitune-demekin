@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 3529550915833908551}
-  maxDistance: 59
+  maxDistance: 59.25
   pointControl: 0.3
   _size: 3
 --- !u!1 &2941690825545841197

@@ -39,7 +39,7 @@ public class ButtonScript : MonoBehaviour
                 }
                 if (gimmickObject[i].tag == "Hinge")
                 {
-                    gimmickObject[i].GetComponent<TurnScript>().Turn();
+                    gimmickObject[i].GetComponent<TurnScript>().Turn(_time);
                 }
             }
         }

@@ -6,11 +6,11 @@ using DG.Tweening;
 public class TurnScript : MonoBehaviour
 {
     [SerializeField]
-    private float turnSpeed;
-    [SerializeField]
     private float turnDistance;
-    public void Turn()
+    [SerializeField]
+    private Ease _ease;
+    public void Turn(float Time)
     {
-        transform.DORotate(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + turnDistance, transform.eulerAngles.z), turnSpeed); 
+        transform.DORotate(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + turnDistance, transform.eulerAngles.z), Time).SetEase(_ease); 
     }
 }

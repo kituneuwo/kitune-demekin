@@ -54,7 +54,7 @@ public class BulletScript_Enemy : MonoBehaviour
             if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 PlayerScript.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
-                //Debug.Log(PlayerScript.PlayerLife);
+                Debug.Log(PlayerScript.PlayerLife);
             }
         }
     }
