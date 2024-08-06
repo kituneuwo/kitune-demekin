@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+
+    [SerializeField] AudioClip Sound1;
+    private AudioSource audioSource;
     [SerializeField] private GameObject HPUI;
     [SerializeField]
     private Slider slider;
@@ -48,6 +51,7 @@ public class PlayerScript : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         IsDeath = false;
         PlayerLife = playerManager.GetPlayer(this.gameObject.name).GetPlayerLife();
         maxLife = PlayerLife;
@@ -93,6 +97,7 @@ public class PlayerScript : MonoBehaviour
         if (PlayerLife <= 0 && !IsDeath)
         {
             IsDeath = true;
+            audioSource.PlayOneShot(Sound1);
             BreakPlayer();
             if (HPUI != null)
             {
