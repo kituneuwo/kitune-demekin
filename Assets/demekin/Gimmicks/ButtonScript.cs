@@ -14,13 +14,13 @@ public class ButtonScript : MonoBehaviour
     private Vector3 PushPosition;
     [SerializeField] private float _time;
     private bool IsActivation;
-    [SerializeField]
     Renderer rendererComponent;
     [SerializeField]
     private Color Changecolor;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        rendererComponent = this.GetComponent<Renderer>();
+        audioSource = this.GetComponent<AudioSource>();
         IsActivation = false;
     }
     void OnCollisionEnter(Collision collision)
@@ -28,7 +28,7 @@ public class ButtonScript : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet") && !IsActivation)
         {
             audioSource.PlayOneShot(Sound1);
-            this.rendererComponent.material.DOColor(Changecolor, _time).SetEase(Ease.OutCubic);
+            this.rendererComponent.material.DOColor(Changecolor, _time / 5).SetEase(Ease.OutCubic);
             transform.DOMove(PushPosition, _time).SetEase(Ease.Linear);
             IsActivation = true;
             for (int i = 0; i < gimmickObject.Length; i++)

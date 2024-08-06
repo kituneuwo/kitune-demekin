@@ -28,7 +28,7 @@ public class TargetScript : MonoBehaviour
         {
             if (Physics.Raycast(playerObject.transform.position, playerObject.transform.forward, out _hit, maxDistance, _layerMask))
             {
-                transform.position = _hit.point + (_hit.normal * 0.02f);
+                transform.position = _hit.point + (_hit.normal * pointControl);
                 transform.rotation = Quaternion.LookRotation(_hit.normal);
                 transform.localScale = new Vector3(10 + (_hit.distance / _size), 10 + (_hit.distance / _size), 10 + (_hit.distance / _size));
             }
