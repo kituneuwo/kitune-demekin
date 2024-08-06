@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34d2a0502a7810644ab295c1dcf5da1f, type: 3}
-  m_Name: Normal
+  m_Name: SpeedAttack
   m_EditorClassIdentifier: 
-  PlayerName: "\u57FA\u672C\u578B"
-  PlayerInformation: "\u57FA\u672C\u306E\u578B\u3002\u6271\u3044\u3084\u3059\u3044\u304C\u826F\u304F\u3082\u60AA\u304F\u3082\u5E73\u5747\u7684\u3002"
-  PlayerLife: 200
-  PlayerSpeed: 1
-  PlayerTurnSpeed: 1
-  PlayerDamage: 5
-  PlayerBulletSpeed: 1
-  PlayerBulletDTime: 1
+  PlayerName: "\u5F37\u8972\u578B"
+  PlayerInformation: "\u9AD8\u901F\u30FB\u9AD8\u706B\u529B\u578B\u3002\u30D2\u30C3\u30C8\u30A2\u30F3\u30C9\u30A2\u30A6\u30A7\u30A4\u3092\u5F97\u610F\u3068\u3059\u308B\u3002"
+  PlayerLife: 100
+  PlayerSpeed: 2.5
+  PlayerTurnSpeed: 1.75
+  PlayerDamage: 10
+  PlayerBulletSpeed: 1.25
+  PlayerBulletDTime: 0.8

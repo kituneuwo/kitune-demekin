@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34d2a0502a7810644ab295c1dcf5da1f, type: 3}
-  m_Name: Normal
+  m_Name: HighSpeed
   m_EditorClassIdentifier: 
-  PlayerName: "\u57FA\u672C\u578B"
-  PlayerInformation: "\u57FA\u672C\u306E\u578B\u3002\u6271\u3044\u3084\u3059\u3044\u304C\u826F\u304F\u3082\u60AA\u304F\u3082\u5E73\u5747\u7684\u3002"
-  PlayerLife: 200
-  PlayerSpeed: 1
-  PlayerTurnSpeed: 1
-  PlayerDamage: 5
+  PlayerName: "\u9AD8\u901F"
+  PlayerInformation: "\u306F\u3084\u3044\u3002\u305D\u308C\u3060\u3051"
+  PlayerLife: 15
+  PlayerSpeed: 10
+  PlayerTurnSpeed: 0.5
+  PlayerDamage: 1
   PlayerBulletSpeed: 1
-  PlayerBulletDTime: 1
+  PlayerBulletDTime: 0.9

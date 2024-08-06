@@ -16,10 +16,13 @@ public class TargetScript : MonoBehaviour
     private int _layerMask;
     [SerializeField]
     private float _size;
+    [SerializeField]
+    private PlayerManager playerManager;
     void Start()
     {
         _ray = new Ray(playerObject.transform.position,playerObject.transform.eulerAngles);
         _layerMask = LayerMask.GetMask(new string[] { "Default",  "Enemy" });
+        maxDistance *= playerManager.GetPlayer(transform.parent.name).GetPlayerBulletDTime();
     }
 
     void Update()

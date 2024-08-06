@@ -31,7 +31,7 @@ public class BulletScript_3D : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * speed * playerManager.GetPlayer(this.gameObject.name).GetPlayerBulletSpeed(), ForceMode.VelocityChange);
         Invoke("Look",0.02f);
-        Invoke("DestroyBullet", LengthTime);
+        Invoke("DestroyBullet", LengthTime * (1 / playerManager.GetPlayer(this.gameObject.name).GetPlayerBulletSpeed()) * playerManager.GetPlayer(this.gameObject.name).GetPlayerBulletDTime());
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -48,7 +48,6 @@ public class BulletScript_3D : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyScript>().EnemyLife -= playerManager.GetPlayer(this.gameObject.name).GetPlayerDamage();
-            Debug.Log("Hit");
         }
     }
     void DestroyBullet()

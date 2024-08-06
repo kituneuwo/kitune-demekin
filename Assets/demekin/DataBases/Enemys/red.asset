@@ -15,6 +15,5 @@ MonoBehaviour:
   kindOfEnemy: 1
   EnemyName: "\u8D64\u9B3C"
   EnemyInformation: "\u5272\u3068\u30C0\u30E1\u30FC\u30B8\u304C\u9AD8\u3044\u3002\u3064\u3088\u3044"
-  EnemyLife: 1
-  EnemyDamage: 3
+  EnemyLife: 5
   EnemySpeed: 2

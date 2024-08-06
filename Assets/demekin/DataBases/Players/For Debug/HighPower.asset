@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34d2a0502a7810644ab295c1dcf5da1f, type: 3}
-  m_Name: saikyou
+  m_Name: HighPower
   m_EditorClassIdentifier: 
-  PlayerName: "\u6700\u5F37"
-  PlayerInformation: "\u6700\u5F37\u3002"
-  PlayerLife: 9999
-  PlayerSpeed: 5
-  PlayerTurnSpeed: 5
-  PlayerDamage: 9999
-  PlayerBulletSpeed: 3
+  PlayerName: "\u9AD8\u706B\u529B"
+  PlayerInformation: "\u3053\u3046\u3052\u304D\u3066\u304D\u3002\u305D\u308C\u3060\u3051"
+  PlayerLife: 30
+  PlayerSpeed: 2
+  PlayerTurnSpeed: 1
+  PlayerDamage: 20
+  PlayerBulletSpeed: 2
+  PlayerBulletDTime: 2

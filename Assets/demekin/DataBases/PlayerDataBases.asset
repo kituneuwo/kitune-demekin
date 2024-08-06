@@ -15,3 +15,7 @@ MonoBehaviour:
   playerLists:
   - {fileID: 11400000, guid: 902d8a31ed58c7c449921676c92fd72e, type: 2}
   - {fileID: 11400000, guid: 6661db50ce478674284d6fe0e12b5578, type: 2}
+  - {fileID: 11400000, guid: 60ce20923d0dbc24d8f06be65ccd02d2, type: 2}
+  - {fileID: 11400000, guid: 4de77fa450e1aa942b30da94b1265355, type: 2}
+  - {fileID: 11400000, guid: 5b7b4f2d7656af94eb9fdaa172c0ee15, type: 2}
+  - {fileID: 11400000, guid: 17c6f157d561aee43bca4ebbb976c6e1, type: 2}
