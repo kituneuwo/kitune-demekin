@@ -77,17 +77,18 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
-            audioSource.PlayOneShot(Sound2);
             Debug.Log(Life);
             if(slider != null)
             {
                 slider.value = Life / maxLife;
             }
+            audioSource.PlayOneShot(Sound2);
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
             Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage() / 10;
             Debug.Log(Life);
+            audioSource.PlayOneShot(Sound2);
         }
         if (Life <= 0 && !IsDeath)
         {
@@ -95,9 +96,9 @@ public class EnemyScript : MonoBehaviour
             {
                 HPUI.SetActive(false);
             }
-            audioSource.PlayOneShot(Sound1);
             IsDeath = true;
             BreakChara();
+            audioSource.PlayOneShot(Sound1);
         }
     }
 }
