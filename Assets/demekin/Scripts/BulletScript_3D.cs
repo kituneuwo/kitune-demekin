@@ -20,6 +20,8 @@ public class BulletScript_3D : MonoBehaviour
     private float LengthTime;
     [SerializeField]
     private float plus;
+    [SerializeField]
+    private PlayerManager playerManager;
     private float RandomNumber;
     private Vector3 PositionBefore;
     private Vector3 PositionNow;
@@ -27,7 +29,7 @@ public class BulletScript_3D : MonoBehaviour
     {
         PositionBefore = transform.position;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
+        rb.AddForce(transform.forward * speed * playerManager.GetPlayer(this.gameObject.name).GetPlayerBulletSpeed(), ForceMode.VelocityChange);
         Invoke("Look",0.02f);
         Invoke("DestroyBullet", LengthTime);
     }
@@ -43,6 +45,10 @@ public class BulletScript_3D : MonoBehaviour
         RandomNumber = Random.value - 0.5f;
         rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
         Invoke("DestroyBullet", DeathTime);
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyScript>().EnemyLife -= playerManager.GetPlayer(this.gameObject.name).GetPlayerDamage();
+        }
     }
     void DestroyBullet()
     {

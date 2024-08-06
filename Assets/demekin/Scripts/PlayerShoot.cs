@@ -10,6 +10,7 @@ public class PlayerShoot : MonoBehaviour
     private bool IsDeath;
     [SerializeField]
     private GameObject BulletObject;
+    private GameObject obj;
     void Start()
     {
         
@@ -26,7 +27,8 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !IsDeath)
         {
-            Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles));
+            obj = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.eulerAngles));
+            obj.name = transform.parent.name;
             audioSource.PlayOneShot(audios[i]);
         }
         if (!IsDeath && PlayerScript.PlayerLife <= 0)

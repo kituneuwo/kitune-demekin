@@ -19,6 +19,8 @@ public class PlayerData : ScriptableObject
     private float PlayerTurnSpeed;
     [SerializeField]
     private float PlayerDamage;
+    [SerializeField]
+    private float PlayerBulletSpeed;
 
     public string GetPlayerName()
     {
@@ -43,5 +45,9 @@ public class PlayerData : ScriptableObject
     public float GetPlayerDamage()
     {
         return PlayerDamage;
+    }
+    public float GetPlayerBulletSpeed()
+    {
+        return PlayerBulletSpeed;
     }
 }

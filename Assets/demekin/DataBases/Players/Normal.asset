@@ -18,3 +18,4 @@ MonoBehaviour:
   PlayerSpeed: 1
   PlayerTurnSpeed: 1
   PlayerDamage: 1
+  PlayerBulletSpeed: 1

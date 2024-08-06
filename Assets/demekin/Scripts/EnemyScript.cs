@@ -16,7 +16,10 @@ public class EnemyScript : MonoBehaviour
     private Rigidbody rb;
     private float Life;
     float maxLife;
-    public float EnemyLife { get; set; }
+    public float EnemyLife {
+        get { return Life; }
+        set { Life = value; }
+    }
     [SerializeField]
     private EnemyManager enemyManager;
     private bool IsDeath;
@@ -74,7 +77,6 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
-            Life--;
             audioSource.PlayOneShot(Sound2);
             Debug.Log(Life);
             if(slider != null)
