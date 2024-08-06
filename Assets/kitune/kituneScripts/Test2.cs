@@ -14,11 +14,8 @@ public class Test2 : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
 
-#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
-#else
-    Application.Quit();//ゲームプレイ終了
-#endif
+            Application.Quit();//ゲームプレイ終了
         }
 
     }

@@ -108,6 +108,12 @@ public class PlayerScript : MonoBehaviour
         {
             slider.value = PlayerLife / maxLife;
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
+        }
     }
     void OnCollisionStay(Collision collision)
     {

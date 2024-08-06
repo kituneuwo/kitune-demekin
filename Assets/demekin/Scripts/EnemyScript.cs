@@ -50,6 +50,19 @@ public class EnemyScript : MonoBehaviour
         maxLife = Life;
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
     }
+    private void Update()
+    {
+        if (Life <= 0 && !IsDeath)
+        {
+            if (HPUI != null)
+            {
+                HPUI.SetActive(false);
+            }
+            IsDeath = true;
+            BreakChara();
+            audioSource.PlayOneShot(Sound1);
+        }
+    }
 
     void BreakChara()
     {
@@ -89,16 +102,6 @@ public class EnemyScript : MonoBehaviour
             Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage() / 10;
             Debug.Log(Life);
             audioSource.PlayOneShot(Sound2);
-        }
-        if (Life <= 0 && !IsDeath)
-        {
-            if(HPUI != null)
-            {
-                HPUI.SetActive(false);
-            }
-            IsDeath = true;
-            BreakChara();
-            audioSource.PlayOneShot(Sound1);
         }
     }
 }
