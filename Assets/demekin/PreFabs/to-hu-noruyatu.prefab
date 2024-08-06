@@ -643,8 +643,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 3529550915833908551}
-  maxDistance: 35
+  maxDistance: 59
   pointControl: 1
+  _size: 4
 --- !u!1 &2941690825545841197
 GameObject:
   m_ObjectHideFlags: 0

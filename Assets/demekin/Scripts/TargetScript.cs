@@ -30,13 +30,13 @@ public class TargetScript : MonoBehaviour
             {
                 transform.position = _hit.point + (_hit.normal * 0.02f);
                 transform.rotation = Quaternion.LookRotation(_hit.normal);
-                transform.localScale = Vector3.one * _hit.distance / _size;
+                transform.localScale = new Vector3(10 + (_hit.distance / _size), 10 + (_hit.distance / _size), 10 + (_hit.distance / _size));
             }
             else
             {
                 transform.localPosition = new Vector3(0, 0, 10);
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
-                transform.localScale = Vector3.one;
+                transform.localScale = new Vector3(10,10,10);
             }
             Debug.DrawRay(playerObject.transform.position, playerObject.transform.forward * maxDistance, Color.red);
         }
