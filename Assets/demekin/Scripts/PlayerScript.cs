@@ -23,6 +23,8 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody rb;
     public static float PlayerLife;
     private bool IsDeath;
+    [SerializeField]
+    private PlayerManager playerManager;
 
     private float PlusSpeed;
     private float PlayerSpeed;
@@ -47,7 +49,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         IsDeath = false;
-        PlayerLife = 200;
+        PlayerLife = playerManager.GetPlayer(this.gameObject.name).GetPlayerLife();
         maxLife = PlayerLife;
         if(slider != null){
             slider.value = 1;
@@ -55,6 +57,7 @@ public class PlayerScript : MonoBehaviour
         sceneController = this.gameObject.GetComponent<SceneController>();
         rb = this.gameObject.GetComponent<Rigidbody>();
         PlusSpeed = -Movespeed;
+        Debug.Log(playerManager.GetPlayer(this.gameObject.name).GetPlayerName() + ": " + playerManager.GetPlayer(this.gameObject.name).GetPlayerInformation());
     }
     void Update()
     {
@@ -70,8 +73,8 @@ public class PlayerScript : MonoBehaviour
         if (PlayerLife > 0 && !IsDeath)
         {
             PlayerSpeed = Movespeed + PlusSpeed;
-            transform.position += transform.forward * (PlayerSpeed) * Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed);
+            transform.position += transform.forward * (PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed()) * Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerTurnSpeed());
         }
         if (Input.GetKey(KeyCode.I) && !IsDeath)
         {

@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 7402890449877094204}
   - component: {fileID: 5463594839577474247}
   - component: {fileID: 7007769731577993666}
+  - component: {fileID: 6863762616718671482}
   m_Layer: 7
   m_Name: to-hu-noruyatu
   m_TagString: Player
@@ -1098,6 +1099,7 @@ MonoBehaviour:
   RotateObject: {fileID: 0}
   RotateSpeed: 0.1
   maxSpeed: 15
+  playerManager: {fileID: 6863762616718671482}
   PlayerD:
     Dpower: 12
     Children:
@@ -1124,7 +1126,6 @@ MonoBehaviour:
     - {fileID: 5750889240202436377}
     - {fileID: 7442889493476286033}
     - {fileID: 6416711871534587201}
-    - {fileID: 1382931611030403358}
     DeathTime: 5
     col: {fileID: 8730742921675522244}
 --- !u!65 &8730742921675522244
@@ -1200,6 +1201,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: {fileID: 4082023814609435992, guid: 141ac828f024fa64a85d270185b7b9f5, type: 3}
+--- !u!114 &6863762616718671482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529550915833908551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b275c5a183bacaf4c975e81740722295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDataBase: {fileID: 11400000, guid: 71dbc02e449bec4458b20c82f0b3e2c9, type: 2}
 --- !u!1 &4031989908523662856
 GameObject:
   m_ObjectHideFlags: 0
