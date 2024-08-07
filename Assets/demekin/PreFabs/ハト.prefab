@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 5877795829934550216}
   m_Layer: 9
   m_Name: "\u30CF\u30C8"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   slider: {fileID: 0}
   enemyManager: {fileID: 2512123334921763166}
   EnemyD:
-    Dpower: 18
+    Dpower: 25
     Children:
     - {fileID: 3836432318837509643}
     DObject:
@@ -528,7 +528,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6, y: 0.6, z: 0.75}
+  m_Size: {x: 0.7, y: 0.7, z: 0.85}
   m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!82 &3326268405611189272
 AudioSource:
