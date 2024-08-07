@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
     private float maxSpeed;
     private Rigidbody rb;
     public static float PlayerLife;
-    private bool IsDeath;
+    private bool IsDeath = false;
     [SerializeField]
     private PlayerManager playerManager;
 
@@ -52,7 +52,6 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        IsDeath = false;
         PlayerLife = playerManager.GetPlayer(this.gameObject.name).GetPlayerLife();
         maxLife = PlayerLife;
         if(slider != null){

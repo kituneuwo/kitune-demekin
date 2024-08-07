@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: gatling green
   m_EditorClassIdentifier: 
   WeaponName: "\u30AC\u30C8\u30EA\u30F3\u30B0\u7832\u5854\u7DD1"
-  WeaponInformation: "\u5C0F\u578B\u306E\u5F3E\u3092\u9023\u5C04\u3059\u308B\u7832\u53F0\u3002\u5F37\u529B\u306A\u5236\u5727\u80FD\u529B\u3092\u8A87\u308B\u3002"
+  WeaponInformation: "\u5C0F\u578B\u306E\u5F3E\u3092\u9023\u5C04\u3059\u308B\u7832\u53F0\u3002\u8D64\u3088\u308A\u540C\u6642\u767A\u5C04\u6570\u304C\u591A\u3044\u3002"
   WeaponDamage: 1
-  WeaponFireRate: 0.1
+  WeaponFireRate: 0.19
   BulletSpeed: 45
   BulletSize: 0.4
   BulletDeathTime: 1
   maxUpAngle: 310
   maxDownAngle: 30
-  ShotVolume: 2
+  ShotVolume: 6
   BulletAccuracy: 35
-  ShootDistance: 55
-  IsLookAtBefore: 1
+  ShootDistance: 45
+  IsLookAtBefore: 0

@@ -25,6 +25,7 @@ public class BulletScript_3D : MonoBehaviour
     private float RandomNumber;
     private Vector3 PositionBefore;
     private Vector3 PositionNow;
+    private bool IsHit = false;
     void Start()
     {
         PositionBefore = transform.position;
@@ -35,6 +36,9 @@ public class BulletScript_3D : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        if (!IsHit)
+        {
+        IsHit = true;
         rb.useGravity = true;
         rb.velocity = new Vector3(0, 0, 0);
         rb.AddTorque(Random.value - 0.5f * torque, Random.value - 0.5f * torque, Random.value - 0.5f * torque, ForceMode.Acceleration);
@@ -48,6 +52,7 @@ public class BulletScript_3D : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyScript>().EnemyLife -= playerManager.GetPlayer(this.gameObject.name).GetPlayerDamage();
+        }
         }
     }
     void DestroyBullet()
