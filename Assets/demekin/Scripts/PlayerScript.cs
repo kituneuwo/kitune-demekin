@@ -120,7 +120,7 @@ public class PlayerScript : MonoBehaviour
         if(collision.gameObject.layer != LayerMask.NameToLayer("EnemyBullet"))
         {
             PlayerLife = 0;
-            Debug.Log("€ˆö:Õ“Ë€(" + collision.gameObject.name + ")");
+            Debug.Log("€ˆö:Õ“Ë€(" + collision.gameObject.name + ")",collision.gameObject);
         }
     }
     void BreakPlayer()

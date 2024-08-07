@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;//’Ç‰Á
+using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class FadeManager : MonoBehaviour
     private GameObject Button2;
 
     private float alpha = 0.0f;
+    public float AlphaValue
+    {
+        get { return alpha; }
+    }
     [SerializeField]
     private float fadeSpeed;
     void Start()

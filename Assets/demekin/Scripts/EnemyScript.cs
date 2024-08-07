@@ -90,18 +90,32 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
-            Debug.Log(Life);
             if(slider != null)
             {
                 slider.value = Life / maxLife;
             }
-            audioSource.PlayOneShot(Sound2);
+            if(Life > 0)
+            {
+                audioSource.PlayOneShot(Sound2);
+                Debug.Log(Life);
+            }
+            else
+            {
+                Debug.Log("åÇîj(" + this.gameObject.name + ")",this.gameObject);
+            }
         }
         else if(other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
             Life -= enemyManager.GetWeapon(other.gameObject.name).GetWeaponDamage() / 10;
-            Debug.Log(Life);
-            audioSource.PlayOneShot(Sound2);
+            if (Life > 0)
+            {
+                Debug.Log(Life);
+                audioSource.PlayOneShot(Sound2);
+            }
+            else
+            {
+                Debug.Log("ìØémì¢Çø(" + other.gameObject.name +"Å®" + this.gameObject.name + ")");
+            }
         }
     }
 }
