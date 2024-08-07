@@ -17068,7 +17068,7 @@ GameObject:
   - component: {fileID: 328005811}
   - component: {fileID: 328005810}
   - component: {fileID: 328005809}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33843,7 +33843,7 @@ GameObject:
   - component: {fileID: 665550073}
   - component: {fileID: 665550072}
   - component: {fileID: 665550071}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50600,7 +50600,7 @@ GameObject:
   - component: {fileID: 998324913}
   - component: {fileID: 998324912}
   - component: {fileID: 998324911}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56030,7 +56030,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1420793377}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -71222,7 +71222,7 @@ GameObject:
   - component: {fileID: 1387739429}
   - component: {fileID: 1387739428}
   - component: {fileID: 1387739427}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73229,7 +73229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420793372}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18345653, y: 0.000000016914353, z: -0.0000000031566232, w: 0.9830278}
+  m_LocalRotation: {x: 0.18345653, y: -0.000000016914353, z: 0.0000000031566232, w: 0.9830278}
   m_LocalPosition: {x: 0, y: 2.510787, z: -5.024908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -88057,7 +88057,7 @@ GameObject:
   - component: {fileID: 1695102046}
   - component: {fileID: 1695102045}
   - component: {fileID: 1695102044}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91557,7 +91557,7 @@ GameObject:
   - component: {fileID: 1759411259}
   - component: {fileID: 1759411258}
   - component: {fileID: 1759411257}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: haikei (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100502,6 +100502,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911624664}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1913720318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913720321}
+  - component: {fileID: 1913720320}
+  - component: {fileID: 1913720319}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1913720319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913720318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1913720320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913720318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1913720321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913720318}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1914765470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106050,12 +106118,12 @@ PrefabInstance:
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016914353
+      value: -0.000000016914353
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000031566232
+      value: 0.0000000031566232
       objectReference: {fileID: 0}
     - target: {fileID: 1702557208870072840, guid: 542b2702b932b6546956716f87c441a6,
         type: 3}
@@ -110036,7 +110104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254, y: 198}
+  m_AnchoredPosition: {x: -254, y: 145}
   m_SizeDelta: {x: 148.3569, y: 26.2233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109813458
@@ -112429,3 +112497,4 @@ SceneRoots:
   - {fileID: 328005812}
   - {fileID: 1695102047}
   - {fileID: 1612371188}
+  - {fileID: 1913720321}
