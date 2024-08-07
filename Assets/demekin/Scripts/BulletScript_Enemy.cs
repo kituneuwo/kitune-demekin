@@ -60,7 +60,7 @@ public class BulletScript_Enemy : MonoBehaviour
                 }
                 else
                 {
-
+                    Debug.Log("Ž€ˆö:ŽEŠQ(" + this.gameObject.name + ")");
                 }
             }
         }

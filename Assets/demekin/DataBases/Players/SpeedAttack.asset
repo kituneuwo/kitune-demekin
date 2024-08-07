@@ -19,4 +19,4 @@ MonoBehaviour:
   PlayerTurnSpeed: 1.75
   PlayerDamage: 10
   PlayerBulletSpeed: 1.25
-  PlayerBulletDTime: 0.8
+  PlayerBulletDTime: 0.9

@@ -88,7 +88,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.P) && !IsDeath)
         {
             PlayerLife = 0;
-            Debug.Log("©”š");
+            Debug.Log("€ˆö:©”š");
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -120,7 +120,7 @@ public class PlayerScript : MonoBehaviour
         if(collision.gameObject.layer != LayerMask.NameToLayer("EnemyBullet"))
         {
             PlayerLife = 0;
-            Debug.Log(collision.gameObject.name + "‚ÉÕ“Ë€");
+            Debug.Log("€ˆö:Õ“Ë€(" + collision.gameObject.name + ")");
         }
     }
     void BreakPlayer()

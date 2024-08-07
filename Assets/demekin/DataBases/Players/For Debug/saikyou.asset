@@ -15,7 +15,7 @@ MonoBehaviour:
   PlayerName: "\u6700\u5F37"
   PlayerInformation: "\u3064\u3088\u3044\u3002"
   PlayerLife: 9999
-  PlayerSpeed: 7
+  PlayerSpeed: 10
   PlayerTurnSpeed: 5
   PlayerDamage: 9999
   PlayerBulletSpeed: 3

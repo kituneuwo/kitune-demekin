@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerName: "\u9AD8\u706B\u529B"
   PlayerInformation: "\u3053\u3046\u3052\u304D\u3066\u304D\u3002\u305D\u308C\u3060\u3051"
-  PlayerLife: 30
-  PlayerSpeed: 2
+  PlayerLife: 200
+  PlayerSpeed: 1
   PlayerTurnSpeed: 1
-  PlayerDamage: 20
-  PlayerBulletSpeed: 2
-  PlayerBulletDTime: 2
+  PlayerDamage: 25
+  PlayerBulletSpeed: 1
+  PlayerBulletDTime: 1

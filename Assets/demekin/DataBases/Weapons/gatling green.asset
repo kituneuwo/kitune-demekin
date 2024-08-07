@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8e927eba572170428f91648c97f1df0, type: 3}
-  m_Name: gatling red
+  m_Name: gatling green
   m_EditorClassIdentifier: 
-  WeaponName: "\u30AC\u30C8\u30EA\u30F3\u30B0\u7832\u5854\u8D64"
+  WeaponName: "\u30AC\u30C8\u30EA\u30F3\u30B0\u7832\u5854\u7DD1"
   WeaponInformation: "\u5C0F\u578B\u306E\u5F3E\u3092\u9023\u5C04\u3059\u308B\u7832\u53F0\u3002\u5F37\u529B\u306A\u5236\u5727\u80FD\u529B\u3092\u8A87\u308B\u3002"
   WeaponDamage: 1
-  WeaponFireRate: 0.05
+  WeaponFireRate: 0.07
   BulletSpeed: 50
   BulletSize: 0.4
   BulletDeathTime: 1
   maxUpAngle: 310
   maxDownAngle: 30
   ShotVolume: 3
-  BulletAccuracy: 25
-  ShootDistance: 60
+  BulletAccuracy: 35
+  ShootDistance: 55
   IsLookAtBefore: 1
