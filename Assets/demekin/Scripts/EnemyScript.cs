@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour
     }
     [SerializeField]
     private EnemyManager enemyManager;
-    private bool IsDeath;
+    private bool IsDeath = false;
     [System.Serializable]
     private struct EnemyDeathP
     {
@@ -45,7 +45,6 @@ public class EnemyScript : MonoBehaviour
         }
         Life = maxLife;
         audioSource = GetComponent<AudioSource>();
-        IsDeath = false;
         Life = enemyManager.GetEnemy(this.gameObject.name).GetEnemyLife();
         maxLife = Life;
         Debug.Log(enemyManager.GetEnemy(this.gameObject.name).GetEnemyName() + ": " + enemyManager.GetEnemy(this.gameObject.name).GetEnemyInformation());
