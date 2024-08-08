@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Hinge
   - Fade
+  - Goal
   layers:
   - Default
   - TransparentFX

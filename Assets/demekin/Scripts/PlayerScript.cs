@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,8 @@ public class PlayerScript : MonoBehaviour
 {
     public static float PlayerLife;
     public static int Score;
+    public static bool IsClear;
+    public static bool IsDeath;
     [SerializeField] AudioClip Sound1;
     private AudioSource audioSource;
     [SerializeField] private GameObject HPUI;
@@ -31,7 +34,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private float maxSpeed;
     private Rigidbody rb;
-    private bool IsDeath = false;
     [SerializeField]
     private PlayerManager playerManager;
 
@@ -58,6 +60,8 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         Score = 0;
+        IsClear = false;
+        IsDeath = false;
         audioSource = GetComponent<AudioSource>();
         PlayerLife = playerManager.GetPlayer(this.gameObject.name).GetPlayerLife();
         maxLife = PlayerLife;
@@ -71,38 +75,45 @@ public class PlayerScript : MonoBehaviour
     }
     void Update()
     {
-        PlusSpeed += Input.GetAxis("Mouse ScrollWheel") * 10;
-        if(PlusSpeed > maxSpeed)
+        if(!IsDeath && !IsClear)
         {
-            PlusSpeed = maxSpeed;
-        }
-        else if(PlusSpeed < -Movespeed)
-        {
-            PlusSpeed = -Movespeed;
-        }
-        if (PlayerLife > 0 && !IsDeath)
-        {
+            PlusSpeed += Input.GetAxis("Mouse ScrollWheel") * 10;
+            if (PlusSpeed > maxSpeed)
+            {
+                PlusSpeed = maxSpeed;
+            }
+            else if (PlusSpeed < -Movespeed)
+            {
+                PlusSpeed = -Movespeed;
+            }
+            if (Input.GetKey(KeyCode.I) && !IsDeath)
+            {
+                var obj = Instantiate(EnemyObject, transform.forward * 15f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y + 180, 0));
+                obj.name = EnemyObject.name;
+            }
+            if (Input.GetKey(KeyCode.P) && !IsDeath)
+            {
+                PlayerLife = 0;
+                Debug.Log("éÄàˆ:é©îö");
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log(PlayerSpeed);
+            }
+            if (slider != null)
+            {
+                slider.value = PlayerLife / maxLife;
+            }
             PlayerSpeed = Movespeed + PlusSpeed;
-            transform.position += transform.forward * (PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed()) * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerTurnSpeed());
-        }
-        if (Input.GetKey(KeyCode.I) && !IsDeath)
-        {
-            var obj = Instantiate(EnemyObject, transform.forward * 15f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y + 180, 0));
-            obj.name = EnemyObject.name;
-        }
-        if (Input.GetKey(KeyCode.P) && !IsDeath)
-        {
-            PlayerLife = 0;
-            Debug.Log("éÄàˆ:é©îö");
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log(PlayerSpeed);
+            PlayerSpeedValue = PlayerSpeed * 1.8f;
+            _speedtext.SetText(PlayerSpeedValue.ToString("F1") + "km/h");
+            _scoretext.SetText("Score:" + Score.ToString());
         }
         if (PlayerLife <= 0 && !IsDeath)
         {
             IsDeath = true;
+            Debug.Log(IsDeath);
             audioSource.PlayOneShot(Sound1);
             BreakPlayer();
             if (HPUI != null)
@@ -110,23 +121,26 @@ public class PlayerScript : MonoBehaviour
                 HPUI.SetActive(false);
             }
         }
-        if (slider != null)
-        {
-            slider.value = PlayerLife / maxLife;
-        }
         if (Input.GetKey(KeyCode.Escape))
         {
 
             UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
-        PlayerSpeedValue = PlayerSpeed * 1.8f;
-        _speedtext.SetText(PlayerSpeedValue.ToString("F1") + "km/h");
-        _scoretext.SetText("Score:" + Score.ToString());
+        transform.position += transform.forward * (PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed()) * Time.deltaTime;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Goal" && !IsClear)
+        {
+            IsClear = true;
+            DOVirtual.Float(PlayerSpeed, 0, 5, onVirtualUpdate: (tweenValue) => { PlayerSpeed = tweenValue; }).SetEase(Ease.OutSine);
+            sceneController.SceneEnd();
+        }
     }
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer != LayerMask.NameToLayer("EnemyBullet"))
+        if (collision.gameObject.layer != LayerMask.NameToLayer("EnemyBullet") && !IsClear)
         {
             PlayerLife = 0;
             Debug.Log("éÄàˆ:è’ìÀéÄ(" + collision.gameObject.name + ")",collision.gameObject);
@@ -136,7 +150,7 @@ public class PlayerScript : MonoBehaviour
     {
         PlayerD.col.enabled = false;
         Invoke("DestroyPlayer", PlayerD.DeathTime);
-        SceneEnd();
+        sceneController.SceneEnd();
         for (int i = 0; i < PlayerD.Children.Length; i++)
         {
             PlayerD.Children[i].transform.DetachChildren();
@@ -164,10 +178,6 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(PlayerD.DObject[i]);
         }
-    }
-    void SceneEnd()
-    {
-        sceneController.SceneEnd();
     }
     
 }

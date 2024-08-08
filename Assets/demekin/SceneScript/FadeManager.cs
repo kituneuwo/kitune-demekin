@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,11 +13,15 @@ public class FadeManager : MonoBehaviour
     private bool isFadeOut = false;
     private bool isSceneEnd = false;
     [SerializeField]
-    private GameObject Button1;
+    private GameObject ButtonBack;
     [SerializeField]
-    private GameObject Button2;
+    private GameObject Restart;
+    [SerializeField]
+    private GameObject ButtonClear;
     [SerializeField]
     private GameObject GameOver;
+    [SerializeField]
+    private GameObject GameClear;
 
     private float alpha = 0.0f;
     public float AlphaValue
@@ -27,9 +32,11 @@ public class FadeManager : MonoBehaviour
     private float fadeSpeed;
     void Start()
     {
-        Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
-        Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        ButtonBack.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        Restart.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        ButtonClear.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         GameOver.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        GameClear.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         if (!isFadeInstance)
         {
             DontDestroyOnLoad(this);
@@ -63,7 +70,14 @@ public class FadeManager : MonoBehaviour
                 alpha = 1.0f;
             }
             this.GetComponentInChildren<Image>().color = new Color(0.0f, 0.0f, 0.0f, alpha);
-            GameOver.GetComponent<Image>().color = new Color(255, 255, 255, 5 - (5 * alpha));
+            if (PlayerScript.IsDeath)
+            {
+                GameOver.GetComponent<Image>().color = new Color(255, 255, 255, 5 - (5 * alpha));
+            }
+            else
+            {
+                GameClear.GetComponent<Image>().color = new Color(255, 255, 255, 5 - (5 * alpha));
+            }
         }
         else if (isSceneEnd)
         {
@@ -72,11 +86,25 @@ public class FadeManager : MonoBehaviour
             {
                 isSceneEnd = false;
                 alpha = 0.8f;
-                Button1.GetComponent<Image>().color = new Color(255, 255, 255, 1);
-                Button2.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                if (PlayerScript.IsDeath)
+                {
+                    Restart.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                }
+                else
+                {
+                    ButtonClear.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                }
+                ButtonBack.GetComponent<Image>().color = new Color(255, 255, 255, 1);
             }
             this.GetComponentInChildren<Image>().color = new Color(0.0f, 0.0f, 0.0f, alpha);
-            GameOver.GetComponent<Image>().color = new Color(255, 255, 255, alpha * 1.25f);
+            if (PlayerScript.IsDeath)
+            {
+                GameOver.GetComponent<Image>().color = new Color(255, 255, 255, alpha * 1.25f);
+            }
+            else
+            {
+                GameClear.GetComponent<Image>().color = new Color(255, 255, 255, alpha * 1.25f);
+            }
         }
     }
 
@@ -84,16 +112,18 @@ public class FadeManager : MonoBehaviour
     {
         isFadeIn = true;
         isFadeOut = false;
-        Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
-        Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        ButtonBack.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        Restart.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        ButtonClear.GetComponent<Image>().color = new Color(255, 255, 255, 0);
     }
 
     public void fadeOut()
     {
         isFadeOut = true;
         isFadeIn = false;
-        Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
-        Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        ButtonBack.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        Restart.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        ButtonClear.GetComponent<Image>().color = new Color(255, 255, 255, 0);
     }
     public void HalfFadeOut()
     {
