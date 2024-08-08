@@ -1857,6 +1857,7 @@ MonoBehaviour:
   BulletObject: {fileID: 5870586731001345321, guid: cb372cbb66eef3e4888e1ff7c959f39b,
     type: 3}
   enemyManager: {fileID: 8156623948531445004}
+  ShootPosition: {x: 4, y: 1}
 --- !u!114 &8156623948531445004
 MonoBehaviour:
   m_ObjectHideFlags: 0
