@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
-
+    public static float PlayerLife;
+    public static int Score;
     [SerializeField] AudioClip Sound1;
     private AudioSource audioSource;
     [SerializeField] private GameObject HPUI;
     [SerializeField]
     private Slider slider;
+    [SerializeField]
+    private TMP_Text _speedtext;
+    [SerializeField]
+    private TMP_Text _scoretext;
+    private float PlayerSpeedValue;
     private float maxLife;
     [SerializeField]
     private float Movespeed;
@@ -24,7 +31,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private float maxSpeed;
     private Rigidbody rb;
-    public static float PlayerLife;
     private bool IsDeath = false;
     [SerializeField]
     private PlayerManager playerManager;
@@ -51,6 +57,7 @@ public class PlayerScript : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        Score = 0;
         audioSource = GetComponent<AudioSource>();
         PlayerLife = playerManager.GetPlayer(this.gameObject.name).GetPlayerLife();
         maxLife = PlayerLife;
@@ -113,6 +120,9 @@ public class PlayerScript : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
+        PlayerSpeedValue = PlayerSpeed * 1.8f;
+        _speedtext.SetText(PlayerSpeedValue.ToString("F1") + "km/h");
+        _scoretext.SetText("Score:" + Score.ToString());
     }
     void OnCollisionStay(Collision collision)
     {

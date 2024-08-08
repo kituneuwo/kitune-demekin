@@ -20,6 +20,13 @@ public class ButtonScene : MonoBehaviour
             sceneController.SceneRestart();
         }
     }
+    public void GoNextScene()
+    {
+        if (fadeManager.AlphaValue == 0.8f)
+        {
+            sceneController.SceneNext();
+        }
+    }
     public void BackScene()
     {
         if (PlayerScript.PlayerLife <= 0 && fadeManager.AlphaValue == 0.8f)
