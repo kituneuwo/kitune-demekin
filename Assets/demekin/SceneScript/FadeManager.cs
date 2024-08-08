@@ -15,6 +15,8 @@ public class FadeManager : MonoBehaviour
     private GameObject Button1;
     [SerializeField]
     private GameObject Button2;
+    [SerializeField]
+    private GameObject GameOver;
 
     private float alpha = 0.0f;
     public float AlphaValue
@@ -27,6 +29,7 @@ public class FadeManager : MonoBehaviour
     {
         Button1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         Button2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        GameOver.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         if (!isFadeInstance)
         {
             DontDestroyOnLoad(this);
@@ -60,6 +63,7 @@ public class FadeManager : MonoBehaviour
                 alpha = 1.0f;
             }
             this.GetComponentInChildren<Image>().color = new Color(0.0f, 0.0f, 0.0f, alpha);
+            GameOver.GetComponent<Image>().color = new Color(255, 255, 255, 5 - (5 * alpha));
         }
         else if (isSceneEnd)
         {
@@ -72,6 +76,7 @@ public class FadeManager : MonoBehaviour
                 Button2.GetComponent<Image>().color = new Color(255, 255, 255, 1);
             }
             this.GetComponentInChildren<Image>().color = new Color(0.0f, 0.0f, 0.0f, alpha);
+            GameOver.GetComponent<Image>().color = new Color(255, 255, 255, alpha * 1.25f);
         }
     }
 
