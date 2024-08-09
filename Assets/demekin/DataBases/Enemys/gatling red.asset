@@ -17,3 +17,4 @@ MonoBehaviour:
   EnemyInformation: "\u9023\u5C04\u901F\u5EA6\u305F\u304B\u3044"
   EnemyLife: 25
   EnemySpeed: 0
+  ScoreValue: 600

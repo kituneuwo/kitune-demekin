@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8903169689034198958}
   - component: {fileID: 441859369699075263}
   - component: {fileID: 45252353457211071}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: UnderSea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

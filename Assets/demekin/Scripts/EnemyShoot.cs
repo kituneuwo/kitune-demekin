@@ -18,6 +18,8 @@ public class EnemyShoot : MonoBehaviour
     private GameObject BulletObject;
     [SerializeField]
     private EnemyManager enemyManager;
+    [SerializeField]
+    private Vector2 ShootPosition;
     private GameObject Child;
     private int maxUpAngle;
     private int maxDownAngle;
@@ -64,7 +66,7 @@ public class EnemyShoot : MonoBehaviour
                 {
                     transform.LookAt(MoveSpeedAfter);
                     AngleControl();
-                    Child = Instantiate(BulletObject, transform.forward * 2.5f + transform.position, Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
+                    Child = Instantiate(BulletObject, transform.forward * ShootPosition.x + transform.position + new Vector3(0,ShootPosition.y,0), Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -90));
                     Child.name = this.gameObject.name;
                     Child.transform.localScale = Vector3.one * enemyManager.GetWeapon(this.gameObject.name).GetBulletSize();
                 }

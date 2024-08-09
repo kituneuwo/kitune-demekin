@@ -39,6 +39,13 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("StageScene");
         fadeCanvas.GetComponent<FadeManager>().fadeIn();
     }
+    public async void SceneNext() 
+    {
+        fadeCanvas.GetComponent<FadeManager>().fadeOut();
+        await Task.Delay(TimeSpan.FromSeconds(0.2));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        fadeCanvas.GetComponent<FadeManager>().fadeIn();
+    }
     public void SceneEnd()
     {
         fadeCanvas.GetComponent<FadeManager>().HalfFadeOut();

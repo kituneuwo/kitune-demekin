@@ -60,6 +60,7 @@ public class EnemyScript : MonoBehaviour
             IsDeath = true;
             BreakChara();
             audioSource.PlayOneShot(Sound1);
+            PlayerScript.Score += enemyManager.GetEnemy(this.gameObject.name).GetScoreValue();
         }
     }
 

@@ -461,7 +461,7 @@ MonoBehaviour:
   slider: {fileID: 0}
   enemyManager: {fileID: 2512123334921763166}
   EnemyD:
-    Dpower: 25
+    Dpower: 35
     Children:
     - {fileID: 3836432318837509643}
     DObject:
