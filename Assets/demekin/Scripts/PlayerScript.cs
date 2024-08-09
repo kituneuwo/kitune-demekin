@@ -21,6 +21,9 @@ public class PlayerScript : MonoBehaviour
     private TMP_Text _speedtext;
     [SerializeField]
     private TMP_Text _scoretext;
+    [SerializeField]
+    private GameObject _speedmeter;
+    private Image _speedmeterImage;
     private float PlayerSpeedValue;
     private float maxLife;
     [SerializeField]
@@ -32,6 +35,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField, Range(0f, 1f)]
     private float RotateSpeed;
     [SerializeField]
+    private float maxPlusSpeed;
     private float maxSpeed;
     private Rigidbody rb;
     [SerializeField]
@@ -62,7 +66,9 @@ public class PlayerScript : MonoBehaviour
         Score = 0;
         IsClear = false;
         IsDeath = false;
+        maxSpeed = Movespeed + maxPlusSpeed;
         audioSource = GetComponent<AudioSource>();
+        _speedmeterImage = _speedmeter.GetComponent<Image>();
         PlayerLife = playerManager.GetPlayer(this.gameObject.name).GetPlayerLife();
         maxLife = PlayerLife;
         if(slider != null){
@@ -78,9 +84,9 @@ public class PlayerScript : MonoBehaviour
         if(!IsDeath && !IsClear)
         {
             PlusSpeed += Input.GetAxis("Mouse ScrollWheel") * 10;
-            if (PlusSpeed > maxSpeed)
+            if (PlusSpeed > maxPlusSpeed)
             {
-                PlusSpeed = maxSpeed;
+                PlusSpeed = maxPlusSpeed;
             }
             else if (PlusSpeed < -Movespeed)
             {
@@ -106,9 +112,10 @@ public class PlayerScript : MonoBehaviour
             }
             PlayerSpeed = Movespeed + PlusSpeed;
             transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerTurnSpeed());
-            PlayerSpeedValue = PlayerSpeed * 1.8f;
+            PlayerSpeedValue = PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed() * 1.8f;
             _speedtext.SetText(PlayerSpeedValue.ToString("F1") + "km/h");
             _scoretext.SetText("Score:" + Score.ToString());
+            _speedmeterImage.fillAmount = (PlayerSpeed / maxSpeed) / 4;
         }
         if (PlayerLife <= 0 && !IsDeath)
         {
@@ -135,6 +142,10 @@ public class PlayerScript : MonoBehaviour
             IsClear = true;
             DOVirtual.Float(PlayerSpeed, 0, 5, onVirtualUpdate: (tweenValue) => { PlayerSpeed = tweenValue; }).SetEase(Ease.OutSine);
             sceneController.SceneEnd();
+            if (HPUI != null)
+            {
+                HPUI.SetActive(false);
+            }
         }
     }
     void OnCollisionStay(Collision collision)
