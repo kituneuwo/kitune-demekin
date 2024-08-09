@@ -113,7 +113,6 @@ public class PlayerScript : MonoBehaviour
         if (PlayerLife <= 0 && !IsDeath)
         {
             IsDeath = true;
-            Debug.Log(IsDeath);
             audioSource.PlayOneShot(Sound1);
             BreakPlayer();
             if (HPUI != null)

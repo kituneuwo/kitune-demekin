@@ -22,6 +22,8 @@ public class FadeManager : MonoBehaviour
     private GameObject GameOver;
     [SerializeField]
     private GameObject GameClear;
+    [SerializeField]
+    private BonusScript bonusScript;
 
     private float alpha = 0.0f;
     public float AlphaValue
@@ -93,6 +95,7 @@ public class FadeManager : MonoBehaviour
                 else
                 {
                     ButtonClear.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                    bonusScript.Prepare();
                 }
                 ButtonBack.GetComponent<Image>().color = new Color(255, 255, 255, 1);
             }
