@@ -27,7 +27,7 @@ public class BonusScript : MonoBehaviour
     public async void Prepare()
     {
         ScoreText.SetText(PlayerScript.Score.ToString());
-        rect.DOMoveX(rect.position.x - 200, 1).SetEase(Ease.Linear);
+        rect.DOMoveX(rect.position.x - 350, 1).SetEase(Ease.Linear);
         await Task.Delay(1000);
         ScoreText.DOColor(Color.white, 1);
     }

@@ -135,6 +135,10 @@ public class PlayerScript : MonoBehaviour
             IsClear = true;
             DOVirtual.Float(PlayerSpeed, 0, 5, onVirtualUpdate: (tweenValue) => { PlayerSpeed = tweenValue; }).SetEase(Ease.OutSine);
             sceneController.SceneEnd();
+            if (HPUI != null)
+            {
+                HPUI.SetActive(false);
+            }
         }
     }
     void OnCollisionStay(Collision collision)
