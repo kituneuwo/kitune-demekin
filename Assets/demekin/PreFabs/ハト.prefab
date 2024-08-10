@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 5877795829934550216}
   m_Layer: 9
   m_Name: "\u30CF\u30C8"
-  m_TagString: Enemy
+  m_TagString: RareEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

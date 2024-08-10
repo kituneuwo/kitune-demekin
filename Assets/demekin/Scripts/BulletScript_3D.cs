@@ -49,7 +49,7 @@ public class BulletScript_3D : MonoBehaviour
         RandomNumber = Random.value - 0.5f;
         rb.AddForce(Vector3.up * speed * power * RandomNumber, ForceMode.Acceleration);
         Invoke("DestroyBullet", DeathTime);
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "RareEnemy"))
         {
             collision.gameObject.GetComponent<EnemyScript>().EnemyLife -= playerManager.GetPlayer(this.gameObject.name).GetPlayerDamage();
         }

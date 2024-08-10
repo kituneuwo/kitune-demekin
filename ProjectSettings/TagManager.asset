@@ -10,6 +10,7 @@ TagManager:
   - Hinge
   - Fade
   - Goal
+  - RareEnemy
   layers:
   - Default
   - TransparentFX

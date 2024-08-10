@@ -18387,6 +18387,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 424525494}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &738922618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8293354404753316092, guid: b102a29b9db304f458dc53a146277086,
+    type: 3}
+  m_PrefabInstance: {fileID: 1468793154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &739346601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36744,7 +36750,7 @@ PrefabInstance:
     - target: {fileID: 955405567059762583, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: m_Name
-      value: "\u6700\u5F37"
+      value: "\u57FA\u672C\u578B"
       objectReference: {fileID: 0}
     - target: {fileID: 1099425346558212148, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
@@ -36759,12 +36765,12 @@ PrefabInstance:
     - target: {fileID: 1396830881133278235, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016914353
+      value: -0.000000016914353
       objectReference: {fileID: 0}
     - target: {fileID: 1396830881133278235, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000031566232
+      value: 0.0000000031566232
       objectReference: {fileID: 0}
     - target: {fileID: 2429303855382662665, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
@@ -36795,12 +36801,17 @@ PrefabInstance:
         type: 3}
       propertyPath: _speedmeter
       value: 
-      objectReference: {fileID: 2022748168}
+      objectReference: {fileID: 738922618}
     - target: {fileID: 2429303855382662665, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: RotateObject
       value: 
       objectReference: {fileID: 745107456}
+    - target: {fileID: 2429303855382662665, guid: b102a29b9db304f458dc53a146277086,
+        type: 3}
+      propertyPath: maxPlusSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2966548436667353055, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: PlayerObject
@@ -36815,6 +36826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163690444461074494, guid: b102a29b9db304f458dc53a146277086,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4258726084584079994, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
@@ -36849,12 +36865,12 @@ PrefabInstance:
     - target: {fileID: 6191789883697493587, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016914353
+      value: -0.000000016914353
       objectReference: {fileID: 0}
     - target: {fileID: 6191789883697493587, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000031566232
+      value: 0.0000000031566232
       objectReference: {fileID: 0}
     - target: {fileID: 7295687067256760156, guid: b102a29b9db304f458dc53a146277086,
         type: 3}
@@ -51334,12 +51350,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2017699814}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2022748168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 739305139707827059, guid: b102a29b9db304f458dc53a146277086,
-    type: 3}
-  m_PrefabInstance: {fileID: 1468793154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2024339492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c854c72347a6b6d4c93aff4da565bac6,
@@ -56041,7 +56051,7 @@ PrefabInstance:
     - target: {fileID: 4209197635383764092, guid: 1d4c18ef4e6538a4ab4dd3c242d5791b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 227.5
+      value: 217.6
       objectReference: {fileID: 0}
     - target: {fileID: 4209197635383764092, guid: 1d4c18ef4e6538a4ab4dd3c242d5791b,
         type: 3}
@@ -56086,7 +56096,7 @@ PrefabInstance:
     - target: {fileID: 4614040321959669302, guid: 1d4c18ef4e6538a4ab4dd3c242d5791b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

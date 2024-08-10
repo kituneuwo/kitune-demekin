@@ -56,7 +56,7 @@ public class BulletScript_Enemy : MonoBehaviour
                 PlayerScript.PlayerLife -= enemyManager.GetWeapon(this.gameObject.name).GetWeaponDamage();
                 if(PlayerScript.PlayerLife > 0)
                 {
-                    Debug.Log(PlayerScript.PlayerLife);
+                    //Debug.Log(PlayerScript.PlayerLife);
                 }
                 else
                 {
