@@ -21,7 +21,7 @@ public class PlayerRotate : MonoBehaviour
 
     void Update()
     {
-        if(PlayerObject != null)
+        if(PlayerObject != null && !PlayerScript.IsDeath && !PlayerScript.IsClear)
         {
             if (Input.GetKey(KeyCode.D))
             {

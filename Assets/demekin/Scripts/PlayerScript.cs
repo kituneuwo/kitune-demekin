@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
     public static int Score;
     public static bool IsClear;
     public static bool IsDeath;
+    public static int DeathCount;
+    public static float _time;
     [SerializeField] AudioClip Sound1;
     private AudioSource audioSource;
     [SerializeField] private GameObject HPUI;
@@ -34,7 +36,6 @@ public class PlayerScript : MonoBehaviour
     private GameObject RotateObject;
     [SerializeField, Range(0f, 1f)]
     private float RotateSpeed;
-    [SerializeField]
     private float maxPlusSpeed;
     private float maxSpeed;
     private Rigidbody rb;
@@ -63,6 +64,8 @@ public class PlayerScript : MonoBehaviour
     private PlayerDeathP PlayerD;
     void Start()
     {
+        maxPlusSpeed = Movespeed;
+        _time = 0;
         Score = 0;
         IsClear = false;
         IsDeath = false;
@@ -102,24 +105,20 @@ public class PlayerScript : MonoBehaviour
                 PlayerLife = 0;
                 Debug.Log("Ž€ˆö:Ž©”š");
             }
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Debug.Log(PlayerSpeed);
-            }
             if (slider != null)
             {
                 slider.value = PlayerLife / maxLife;
             }
             PlayerSpeed = Movespeed + PlusSpeed;
-            transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerTurnSpeed());
             PlayerSpeedValue = PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed() * 1.8f;
-            _speedtext.SetText(PlayerSpeedValue.ToString("F1") + "km/h");
             _scoretext.SetText("Score:" + Score.ToString());
-            _speedmeterImage.fillAmount = (PlayerSpeed / maxSpeed) / 4;
+            _time += Time.deltaTime;
         }
         if (PlayerLife <= 0 && !IsDeath)
         {
             IsDeath = true;
+            DeathCount++;
+            Debug.Log(DeathCount);
             audioSource.PlayOneShot(Sound1);
             BreakPlayer();
             if (HPUI != null)
@@ -127,13 +126,20 @@ public class PlayerScript : MonoBehaviour
                 HPUI.SetActive(false);
             }
         }
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
 
             UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log(DeathCount);
+        }
         transform.position += transform.forward * (PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed()) * Time.deltaTime;
+        _speedtext.SetText(PlayerSpeedValue.ToString("F1") + "km/h");
+        _speedmeterImage.fillAmount = (PlayerSpeed / maxSpeed) / 4;
+        transform.rotation = Quaternion.Lerp(transform.rotation, RotateObject.transform.rotation, RotateSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerTurnSpeed());
     }
     private void OnTriggerEnter(Collider other)
     {

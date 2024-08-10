@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class FadeManager : MonoBehaviour
 {
     public static bool isFadeInstance = false;
-
+    private string _activeScenename;
     private bool isFadeIn = false;
     private bool isFadeOut = false;
     private bool isSceneEnd = false;
@@ -22,6 +22,7 @@ public class FadeManager : MonoBehaviour
     private GameObject GameOver;
     [SerializeField]
     private GameObject GameClear;
+    private RectTransform Clearrect;
     [SerializeField]
     private BonusScript bonusScript;
 
@@ -34,6 +35,9 @@ public class FadeManager : MonoBehaviour
     private float fadeSpeed;
     void Start()
     {
+        Clearrect = GameClear.GetComponent<RectTransform>();
+        _activeScenename = SceneManager.GetActiveScene().name;
+        Debug.Log(_activeScenename);
         ButtonBack.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         Restart.GetComponent<Image>().color = new Color(255, 255, 255, 0);
         ButtonClear.GetComponent<Image>().color = new Color(255, 255, 255, 0);
@@ -48,7 +52,7 @@ public class FadeManager : MonoBehaviour
         {
             Destroy(this);
         }
-        SceneManager.activeSceneChanged += ActiveSceneChanged;
+        SceneManager.sceneLoaded += SceneLoaded;
     }
 
     void Update()
@@ -79,10 +83,12 @@ public class FadeManager : MonoBehaviour
             else
             {
                 GameClear.GetComponent<Image>().color = new Color(255, 255, 255, 5 - (5 * alpha));
+                bonusScript.scoreText.color = new Color(255, 255, 255, 5 - (5 * alpha));
             }
         }
         else if (isSceneEnd)
         {
+            Clearrect.transform.localPosition = new Vector3(0, 64.5f, 0);
             alpha += Time.deltaTime / fadeSpeed;
             if (alpha >= 0.8f)
             {
@@ -132,9 +138,12 @@ public class FadeManager : MonoBehaviour
     {
         isSceneEnd = true;
     }
-    void ActiveSceneChanged(Scene thisScene, Scene nextScene)
+    void SceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
+        if(nextScene.name != _activeScenename)
+        {
+            PlayerScript.DeathCount = 0;
+        }
         Invoke("FadeIn", 0.5f);
-        Debug.Log(nextScene);
     }
 }

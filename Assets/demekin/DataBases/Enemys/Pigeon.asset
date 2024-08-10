@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kindOfEnemy: 3
   EnemyName: "\u30CF\u30C8"
-  EnemyInformation: "\u5E73\u548C\u306E\u8C61\u5FB4\u3001\u306F\u3068\u3002\u53EF\u611B\u3044\u3002"
+  EnemyInformation: "\u5E73\u548C\u306E\u8C61\u5FB4\u3002"
   EnemyLife: 1
   EnemySpeed: 0
-  ScoreValue: 3000
+  ScoreValue: 2000
