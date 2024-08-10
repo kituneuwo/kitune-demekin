@@ -21,6 +21,11 @@ public class BonusScript : MonoBehaviour
         set { ScoreText = value; }
     }
     private TMP_Text BonusText;
+    public TMP_Text bonusText
+    {
+        get { return BonusText; }
+        set { BonusText = value; }
+    }
     private RectTransform rect;
     [System.Serializable]
     public struct Bonus
@@ -40,21 +45,38 @@ public class BonusScript : MonoBehaviour
         BonusRect = BonusImage.GetComponent<RectTransform>();
         ScoreText.color = new Color(1, 1, 1, 0);
         BonusText.color = new Color(1, 1, 1, 0);
-        ScoreImage.GetComponent<RectTransform>().transform.localPosition = new Vector3Int(200, 135, 0);
+        ScoreImage.GetComponent<RectTransform>().transform.localPosition = new Vector3(BonusRect.transform.localPosition.x, 135, BonusRect.transform.localPosition.z);
     }
     public async void Prepare()
     {
         ScoreText.SetText("Score:" + PlayerScript.Score.ToString());
-        rect.DOMoveX(rect.position.x - 250, 1).SetEase(Ease.Linear);
+        rect.DOMoveX(rect.position.x - 400, 1).SetEase(Ease.Linear);
         await Task.Delay(1000);
         ScoreText.DOColor(Color.white, 1);
-        for(int i = 0; i < BonusList.Length; i++)
+        for (int i = 0; i < BonusList.Length; i++)
         {
             if (CheckBonus(i))
             {
                 await Task.Delay(1000);
                 ScoreText.SetText("Score:" + PlayerScript.Score.ToString());
             }
+        }
+        PlayerScript.Score = (int)Mathf.Ceil(PlayerScript.Score / 100) * 100;
+        BonusRect.transform.localPosition = new Vector3(BonusRect.transform.localPosition.x, 80, BonusRect.transform.localPosition.z);
+        BonusText.SetText("Coin:" + PlayerScript.Coin);
+        BonusText.DOColor(Color.white, 0.5f);
+        ScoreText.DOColor(new Color(1, 1, 1, 0), 0.5f);
+        await Task.Delay(500);
+        ScoreText.DOColor(Color.white, 0.5f);
+        ScoreText.SetText("Score:" + PlayerScript.Score);
+        await Task.Delay(500);
+        for (int i = (int)Mathf.Ceil(PlayerScript.Score / 100); i > 0; i--)
+        {
+            PlayerScript.Score -= 100;
+            await Task.Delay(2);
+            PlayerScript.Coin++;
+            ScoreText.SetText("Score:" + PlayerScript.Score);
+            BonusText.SetText("Coin:" + PlayerScript.Coin);
         }
     }
     private bool CheckBonus(int number)

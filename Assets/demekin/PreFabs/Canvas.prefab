@@ -313,7 +313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 135}
+  m_AnchoredPosition: {x: 140, y: 135}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8303098606076479198
@@ -512,11 +512,11 @@ MonoBehaviour:
   - name: "\u30B9\u30D4\u30FC\u30C9\u30AF\u30EA\u30A2"
     amount: 1500
     KindOfTerms: Time
-    terms: 45
+    terms: 40
   - name: "\u8D85\u30B9\u30D4\u30FC\u30C9\u30AF\u30EA\u30A2"
     amount: 2000
     KindOfTerms: Time
-    terms: 20
+    terms: 25
   - name: "2\u30C7\u30B9\u30AF\u30EA\u30A2"
     amount: 1500
     KindOfTerms: Death
@@ -712,7 +712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 140, y: 30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4100299027328490340

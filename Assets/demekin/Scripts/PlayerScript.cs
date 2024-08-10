@@ -8,12 +8,13 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static float PlayerLife;
-    public static int Score;
-    public static bool IsClear;
-    public static bool IsDeath;
-    public static int DeathCount;
-    public static float _time;
+    public static float PlayerLife = 0;
+    public static int Score = 0;
+    public static bool IsClear = false;
+    public static bool IsDeath = false;
+    public static int DeathCount = 0;
+    public static float _time = 0;
+    public static int Coin = 0;
     [SerializeField] AudioClip Sound1;
     private AudioSource audioSource;
     [SerializeField] private GameObject HPUI;

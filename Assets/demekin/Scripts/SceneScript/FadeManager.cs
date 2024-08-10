@@ -59,6 +59,7 @@ public class FadeManager : MonoBehaviour
     {
         if (isFadeIn)
         {
+            _activeScenename = SceneManager.GetActiveScene().name;
             alpha -= Time.deltaTime / fadeSpeed;
             if (alpha <= 0.0f)
             {
@@ -83,6 +84,7 @@ public class FadeManager : MonoBehaviour
             else
             {
                 GameClear.GetComponent<Image>().color = new Color(255, 255, 255, 5 - (5 * alpha));
+                bonusScript.bonusText.color = new Color(255, 255, 255, 5 - (5 * alpha));
                 bonusScript.scoreText.color = new Color(255, 255, 255, 5 - (5 * alpha));
             }
         }
