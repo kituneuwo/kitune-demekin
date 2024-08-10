@@ -506,21 +506,33 @@ MonoBehaviour:
   ScoreImage: {fileID: 4772021349224682876}
   BonusList:
   - name: "\u30B9\u30C6\u30FC\u30B8\u30AF\u30EA\u30A2"
-    amount: 1500
+    amount: 1000
     KindOfTerms: true
     terms: 
-  - name: "\u6575\u5168\u6483\u7834"
-    amount: 3000
-    KindOfTerms: EnemyTag
-    terms: Enemy
-  - name: "\u96A0\u3057\u30AD\u30E3\u30E9\u5168\u6483\u7834"
-    amount: 3000
-    KindOfTerms: EnemyTag
-    terms: RareEnemy
+  - name: "\u30B9\u30D4\u30FC\u30C9\u30AF\u30EA\u30A2"
+    amount: 1500
+    KindOfTerms: Time
+    terms: 45
+  - name: "\u8D85\u30B9\u30D4\u30FC\u30C9\u30AF\u30EA\u30A2"
+    amount: 2000
+    KindOfTerms: Time
+    terms: 20
+  - name: "2\u30C7\u30B9\u30AF\u30EA\u30A2"
+    amount: 1500
+    KindOfTerms: Death
+    terms: 2
   - name: "\u30CE\u30FC\u30C7\u30B9\u30AF\u30EA\u30A2"
-    amount: 2500
+    amount: 2000
     KindOfTerms: Death
     terms: 0
+  - name: "\u6575\u5168\u6483\u7834"
+    amount: 2000
+    KindOfTerms: EnemyTag
+    terms: Enemy
+  - name: "\u30CF\u30C8\u5168\u6483\u7834"
+    amount: 2500
+    KindOfTerms: EnemyTag
+    terms: RareEnemy
 --- !u!1 &5678660821780785102
 GameObject:
   m_ObjectHideFlags: 0

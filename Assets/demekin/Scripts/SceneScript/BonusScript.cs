@@ -68,7 +68,7 @@ public class BonusScript : MonoBehaviour
         }
         if (BonusList[number].KindOfTerms == "Death")
         {
-            if(PlayerScript.DeathCount == int.Parse(BonusList[number].terms))
+            if(PlayerScript.DeathCount <= int.Parse(BonusList[number].terms))
             {
                 AddBonus(number);
                 return true;
@@ -81,6 +81,18 @@ public class BonusScript : MonoBehaviour
         else if (BonusList[number].KindOfTerms == "EnemyTag")
         {
             if (GameObject.FindWithTag(BonusList[number].terms) == null)
+            {
+                AddBonus(number);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (BonusList[number].KindOfTerms == "Time")
+        {
+            if(PlayerScript._time <= float.Parse(BonusList[number].terms))
             {
                 AddBonus(number);
                 return true;

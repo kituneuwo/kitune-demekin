@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     public static bool IsClear;
     public static bool IsDeath;
     public static int DeathCount;
+    public static float _time;
     [SerializeField] AudioClip Sound1;
     private AudioSource audioSource;
     [SerializeField] private GameObject HPUI;
@@ -64,6 +65,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         maxPlusSpeed = Movespeed;
+        _time = 0;
         Score = 0;
         IsClear = false;
         IsDeath = false;
@@ -110,6 +112,7 @@ public class PlayerScript : MonoBehaviour
             PlayerSpeed = Movespeed + PlusSpeed;
             PlayerSpeedValue = PlayerSpeed * playerManager.GetPlayer(this.gameObject.name).GetPlayerSpeed() * 1.8f;
             _scoretext.SetText("Score:" + Score.ToString());
+            _time += Time.deltaTime;
         }
         if (PlayerLife <= 0 && !IsDeath)
         {
