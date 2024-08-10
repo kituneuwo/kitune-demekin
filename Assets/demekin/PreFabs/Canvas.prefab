@@ -346,8 +346,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 90dec40e6ebe18145ae118196eaddf49, type: 2}
-  m_sharedMaterial: {fileID: 6119835358020226043, guid: 90dec40e6ebe18145ae118196eaddf49,
+  m_fontAsset: {fileID: 11400000, guid: d3e4300d8298a0449a2f5cf4210b79ee, type: 2}
+  m_sharedMaterial: {fileID: -7893699593608466348, guid: d3e4300d8298a0449a2f5cf4210b79ee,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc747bc3ae582004db206cfbd80ae019, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 523e28aa85b6c76459297c0542e9e498, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7b970394610c8844bc332eaf0c66fe0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46938c2e436bb1b43b9b15c49422da92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -745,8 +745,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Bonus point
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 90dec40e6ebe18145ae118196eaddf49, type: 2}
-  m_sharedMaterial: {fileID: 6119835358020226043, guid: 90dec40e6ebe18145ae118196eaddf49,
+  m_fontAsset: {fileID: 11400000, guid: d3e4300d8298a0449a2f5cf4210b79ee, type: 2}
+  m_sharedMaterial: {fileID: -7893699593608466348, guid: d3e4300d8298a0449a2f5cf4210b79ee,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
