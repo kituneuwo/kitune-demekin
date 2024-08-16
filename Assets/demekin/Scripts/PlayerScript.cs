@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -127,12 +128,7 @@ public class PlayerScript : MonoBehaviour
                 HPUI.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-
-            UnityEditor.EditorApplication.isPlaying = false;
-            Application.Quit();
-        }
+        
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log(DeathCount);
