@@ -11,6 +11,7 @@ TagManager:
   - Fade
   - Goal
   - RareEnemy
+  - Fan
   layers:
   - Default
   - TransparentFX
