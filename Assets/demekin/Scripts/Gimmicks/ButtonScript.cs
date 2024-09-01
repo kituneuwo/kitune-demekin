@@ -41,6 +41,10 @@ public class ButtonScript : MonoBehaviour
                 {
                     gimmickObject[i].GetComponent<TurnScript>().Turn(_time);
                 }
+                if(gimmickObject[i].tag == "Fan")
+                {
+                    gimmickObject[i].GetComponent<FanScript>().ChangeFan();
+                }
             }
         }
     }

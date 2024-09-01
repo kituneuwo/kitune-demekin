@@ -13,12 +13,16 @@ public class FanScript : MonoBehaviour
     private float torque;
     private RaycastHit _hit;
     private Rigidbody rb;
+    private BoxCollider col;
     [SerializeField]
     private bool IsActive;
 
     void Start()
     {
+        col = gameObject.GetComponent<BoxCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
+        col.center = new Vector3(0,0,-maxDistance / 2);
+        col.size = new Vector3(1,1,maxDistance);
     }
     void Update()
     {
