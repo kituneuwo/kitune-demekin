@@ -13,12 +13,18 @@ public class FanScript : MonoBehaviour
     private float torque;
     private RaycastHit _hit;
     private Rigidbody rb;
+    private Rigidbody PlayerRb;
+    [SerializeField]
+    private BoxCollider Playercol;
     private BoxCollider col;
     [SerializeField]
     private bool IsActive;
+    [SerializeField]
+    private float power;
 
     void Start()
     {
+        PlayerRb = Playercol.gameObject.GetComponent<Rigidbody>();
         col = gameObject.GetComponent<BoxCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
         col.center = new Vector3(0,0,-maxDistance / 2);
@@ -29,10 +35,6 @@ public class FanScript : MonoBehaviour
         if (IsActive)
         {
             rb.AddTorque(0, 0, 10 * torque);
-            if (Physics.SphereCast(transform.position, hitRadius, -transform.forward, out _hit, maxDistance))
-            {
-                Debug.Log(_hit.collider.gameObject.name);
-            }
             Debug.DrawRay(transform.position, -transform.forward * maxDistance, Color.red);
         }
     }
@@ -49,6 +51,13 @@ public class FanScript : MonoBehaviour
         else
         {
             IsActive = true;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if(other = Playercol)
+        {
+            PlayerRb.AddForce(-transform.forward * power);
         }
     }
 }

@@ -36114,6 +36114,7 @@ GameObject:
   - component: {fileID: 12799398948268013}
   - component: {fileID: 9139350108301670432}
   - component: {fileID: 9139350108301670433}
+  - component: {fileID: 9139350108301670434}
   m_Layer: 4
   m_Name: Fan
   m_TagString: Fan
@@ -36133,10 +36134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b96934ae28ba844c94086aa7c7c8eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 100
+  maxDistance: 2
   hitRadius: 20
   torque: 150
-  IsActive: 1
+  Playercol: {fileID: 0}
+  IsActive: 0
+  power: 0
 --- !u!54 &9139350108301670433
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36164,6 +36167,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 62
   m_CollisionDetection: 0
+--- !u!65 &9139350108301670434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9139350108301670431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 6}
+  m_Center: {x: 0, y: 0, z: -3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
